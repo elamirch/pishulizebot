@@ -1,2 +1,4 @@
 memes/1-two-kitties-talking/1-tkt.mov filter=lfs diff=lfs merge=lfs -text
 memes/4-cage-and-pascal/4-cage-and-pascal.mov filter=lfs diff=lfs merge=lfs -text
+memes/7-driving-cat/7-driving-cat.mov filter=lfs diff=lfs merge=lfs -text
+memes/10-kitty-saying-arreh/10-kitty-saying-arreh.mov filter=lfs diff=lfs merge=lfs -text
