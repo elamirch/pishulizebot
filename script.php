@@ -1,17 +1,12 @@
 <?php
 ini_set('display_errors', "on");
 error_reporting(E_ALL);
-$HOST=$_ENV["HOST"];
-$USER=$_ENV["USER"];
-$PASS=$_ENV["PASS"];
-$DB=$_ENV["DB"];
-
-$pdo = new PDO("mysql:host=$HOST;port=3306;dbname=$DB", $USER, $PASS);
+$pdo = new PDO('mysql:host=localhost;port=3306;dbname=pishulizebot', 'pishulize_admin', 'holymolypishumishu1213');
 $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
-echo "Running\n";
+echo "running\n";
 
-$BOT_TOKEN = $_ENV["BOT_TOKEN"];
+$BOT_TOKEN = "6570606982:AAHC-FzjRF6phgv6iFhjx6yPQZsMUJfL84U";
 $last_update_id = 0;
 require_once("./buttons.php");
 
@@ -25,8 +20,6 @@ function send($method, $data){
     curl_setopt($curld, CURLOPT_POST, true);
     curl_setopt($curld, CURLOPT_POSTFIELDS, $data);
     curl_setopt($curld, CURLOPT_URL, $url);
-    curl_setopt($curld, CURLOPT_PROXY, '127.0.0.1');
-    curl_setopt($curld, CURLOPT_PROXYPORT, 2081);
     curl_setopt($curld, CURLOPT_RETURNTRANSFER, true);
     $output = curl_exec($curld);
     curl_close($curld);
@@ -40,15 +33,9 @@ function download_file($sender, $file_path){
 
     $url = "https://api.telegram.org/file/bot$BOT_TOKEN/$file_path"; 
     mkdir($sender);
-    $file_name = uniqid() . basename($url); 
-    $scont = stream_context_create(array(
-        'http' => array(
-            'proxy'           => 'tcp://127.0.0.1:2081',
-            'request_fulluri' => true,
-        ),
-    ));
+    $file_name = uniqid("input"); 
     if (file_put_contents($sender . "/" . $file_name ,
-        file_get_contents($url, False, $scont)))
+        file_get_contents($url, False)))
     { 
         echo "File downloaded successfully";
         $stmt = $pdo->prepare('UPDATE `senders` SET `background`=:fn WHERE user_id=:ui;');
@@ -95,6 +82,7 @@ function create_input_video($sender, $background, $meme_overlay_path) {
 function break_string($string, $chunk_size) {
     $lines = array();
     $lines[0] = '';
+    $string = str_replace("'", '`', $string);
     $words = mb_split(" ", $string);
     $i = 0;
     foreach($words as $key=>$word) {
@@ -111,15 +99,15 @@ function break_string($string, $chunk_size) {
 function add_texts_tkt($texts, $sender) {
     //add texts
 
-    $dada_one = str_replace('0@0', "\n", str_replace(':', '\:', escapeshellcmd(implode('0@0', $texts[0]))));
-    $meow_one = str_replace('0@0', "\n", str_replace(':', '\:', escapeshellcmd(implode('0@0', $texts[1]))));
-    $dada_two = str_replace('0@0', "\n", str_replace(':', '\:', escapeshellcmd(implode('0@0', $texts[2]))));
-    $meow_two = str_replace('0@0', "\n", str_replace(':', '\:', escapeshellcmd(implode('0@0', $texts[3]))));
+    $dada_one = str_replace('0@0', "\n‫", str_replace(':', '\:', escapeshellcmd(implode('0@0', $texts[0]))));
+    $meow_one = str_replace('0@0', "\n‫", str_replace(':', '\:', escapeshellcmd(implode('0@0', $texts[1]))));
+    $dada_two = str_replace('0@0', "\n‫", str_replace(':', '\:', escapeshellcmd(implode('0@0', $texts[2]))));
+    $meow_two = str_replace('0@0', "\n‫", str_replace(':', '\:', escapeshellcmd(implode('0@0', $texts[3]))));
     $meow_three = str_replace('0@0', "\n", str_replace(':', '\:', escapeshellcmd(implode('0@0', $texts[4]))));
 
     $output_file = uniqid("output");
     exec("ffmpeg -i $sender/input.mp4 -vf \"" .
-    "drawtext=text='$dada_one':fontfile=Vazirmatn-Regular.ttf:fontsize=32" .
+    "drawtext=text='‫$dada_one':fontfile=Vazirmatn-Regular.ttf:fontsize=32" .
     ":fontcolor=black:x=80:y=320:box=1:boxcolor=white@0.8:enable='between(t,0,2)':text_align=R, drawtext=text='$meow_one':" .
     "fontfile=Vazirmatn-Regular.ttf:fontsize=32:fontcolor=black:x=380:y=350:box=1:boxcolor=white@0.8:enable='between(t,2.8,4)':text_align=R," .
     "drawtext=text='$dada_two':fontfile=Vazirmatn-Regular.ttf:fontsize=32:" .
@@ -137,7 +125,7 @@ function add_texts_type2($text, $sender) {
 
     $text_refined = str_replace('0@0', "\n‫", str_replace(':', '\:', escapeshellcmd(implode('0@0', $text))));
     $output_file = uniqid("output");
-    exec("ffmpeg -i $sender/input.mp4 -vf \"drawtext=text='$text_refined':fontfile=Vazirmatn-Regular.ttf:fontsize=36:" .
+    exec("ffmpeg -i $sender/input.mp4 -vf \"drawtext=text='‫$text_refined':fontfile=Vazirmatn-Regular.ttf:fontsize=36:" .
     "fontcolor=black:x=50:y=150:box=1:boxcolor=white@0.8:boxborderw=5:text_align=R\" -c:v libx264 -c:a " .
     "copy $sender/$output_file.mp4 2>&1", $op);
 
@@ -182,7 +170,7 @@ function create_photo_meme($text, $sender, $meme_overlay_path) {
     $text_refined = str_replace('0@0', "\n‫", str_replace(':', '\:', escapeshellcmd(implode('0@0', $text))));
     $output_file = uniqid("output");
     
-    exec("ffmpeg -i $meme_overlay_path -vf \"drawtext=text='$text_refined':" .
+    exec("ffmpeg -i $meme_overlay_path -vf \"drawtext=text='‫$text_refined':" .
     "fontfile=Vazirmatn-Regular.ttf:fontsize=36:fontcolor=black:x=50:y=50:box=1:" .
     "boxcolor=white@0.8:boxborderw=5:text_align=R,format=rgb24\" -frames:v 1 $sender/$output_file.png", $op);
     return $output_file;
@@ -194,10 +182,10 @@ function create_distracted_bf_meme($text, $sender) {
     $text_3_dbf = str_replace('0@0', "\n‫", str_replace(':', '\:', escapeshellcmd(implode('0@0', $text[2]))));
     $output_file = uniqid("output");
     
-    exec("ffmpeg -i memes/14-distracted-boyfriend/distracted-boyfriend.png -vf \"drawtext=text='$text_1_dbf':fontfile=".
+    exec("ffmpeg -i memes/14-distracted-boyfriend/distracted-boyfriend.png -vf \"drawtext=text='‫$text_1_dbf':fontfile=".
     "Vazirmatn-Regular.ttf:fontsize=24:fontcolor=black:x=630:y=310:box=1:boxcolor=white@0.8:".
-    "boxborderw=5:text_align=R,drawtext=text='$text_2_dbf':fontfile=Vazirmatn-Regular.ttf:fontsize=24:fontcolor=".
-    "black:x=430:y=260:box=1:boxcolor=white@0.8:boxborderw=5:text_align=R,drawtext=text='$text_3_dbf':".
+    "boxborderw=5:text_align=R,drawtext=text='‫$text_2_dbf':fontfile=Vazirmatn-Regular.ttf:fontsize=24:fontcolor=".
+    "black:x=430:y=260:box=1:boxcolor=white@0.8:boxborderw=5:text_align=R,drawtext=text='‫$text_3_dbf':".
     "fontfile=Vazirmatn-Regular.ttf:fontsize=36:fontcolor=black:x=100:y=400:box=1:".
     "boxcolor=white@0.8:boxborderw=5:text_align=R,format=rgb24\" -frames:v 1 $sender/$output_file.png", $op);
     return $output_file;
@@ -208,9 +196,9 @@ function create_drakepost_meme($text, $sender) {
     $text_2_dp = str_replace('0@0', "\n‫", str_replace(':', '\:', escapeshellcmd(implode('0@0', $text[1]))));
     $output_file = uniqid("output");
     
-    exec("ffmpeg -i memes/16-drakepost/drakepost.png -vf \"drawtext=text='$text_1_dp':fontfile=".
+    exec("ffmpeg -i memes/16-drakepost/drakepost.png -vf \"drawtext=text='‫$text_1_dp':fontfile=".
     "Vazirmatn-Regular.ttf:fontsize=36:fontcolor=black:x=400:y=50:box=1:boxcolor=white@0.8:".
-    "boxborderw=5:text_align=R,drawtext=text='$text_2_dp':fontfile=Vazirmatn-Regular.ttf:fontsize=36:fontcolor=".
+    "boxborderw=5:text_align=R,drawtext=text='‫$text_2_dp':fontfile=Vazirmatn-Regular.ttf:fontsize=36:fontcolor=".
     "black:x=400:y=450:box=1:boxcolor=white@0.8:boxborderw=5:text_align=R,format=rgb24\" -frames:v 1 $sender/$output_file.png", $op);
     return $output_file;
 }
@@ -221,10 +209,10 @@ function create_exit12_meme($text, $sender) {
     $text_3_e12 = str_replace('0@0', "\n‫", str_replace(':', '\:', escapeshellcmd(implode('0@0', $text[2]))));
     $output_file = uniqid("output");
     
-    exec("ffmpeg -i memes/17-exit-12/exit-12.png -vf \"drawtext=text='$text_1_e12':fontfile=Vazirmatn-Regular.ttf".
+    exec("ffmpeg -i memes/17-exit-12/exit-12.png -vf \"drawtext=text='‫$text_1_e12':fontfile=Vazirmatn-Regular.ttf".
     ":fontsize=24:fontcolor=black:x=200:y=120:box=1:boxcolor=white@0.8:boxborderw=5:text_align=R,".
-    "drawtext=text='$text_2_e12':fontfile=Vazirmatn-Regular.ttf:fontsize=24:fontcolor=black".
-    ":x=420:y=120:box=1:boxcolor=white@0.8:boxborderw=5:text_align=R,drawtext=text='$text_3_e12':fontfile".
+    "drawtext=text='‫$text_2_e12':fontfile=Vazirmatn-Regular.ttf:fontsize=24:fontcolor=black".
+    ":x=420:y=120:box=1:boxcolor=white@0.8:boxborderw=5:text_align=R,drawtext=text='‫$text_3_e12':fontfile".
     "=Vazirmatn-Regular.ttf:fontsize=24:fontcolor=black:x=335:y=540:box=1:boxcolor=".
     "white@0.8:boxborderw=5:text_align=R,format=rgb24\" -frames:v 1 $sender/$output_file.png", $op);
     return $output_file;
@@ -235,8 +223,8 @@ function create_hide_the_pain_meme($text, $sender) {
     $text_2_hdp = str_replace('0@0', "\n‫", str_replace(':', '\:', escapeshellcmd(implode('0@0', $text[1]))));
     $output_file = uniqid("output");
     
-    exec("ffmpeg -i memes/19-hide-the-pain-harold/hide-the-pain-harold.png -vf \"drawtext=text='$text_1_hdp':fontfile=Vazirmatn-Regular.ttf".
-    ":fontsize=45:fontcolor=black:x=110:y=100:box=1:boxcolor=white@0.8:boxborderw=5,drawtext=text='$text_2_hdp'".
+    exec("ffmpeg -i memes/19-hide-the-pain-harold/hide-the-pain-harold.png -vf \"drawtext=text='‫$text_1_hdp':fontfile=Vazirmatn-Regular.ttf".
+    ":fontsize=45:fontcolor=black:x=110:y=100:box=1:boxcolor=white@0.8:boxborderw=5:text_align=R,drawtext=text='‫$text_2_hdp'".
     ":fontfile=Vazirmatn-Regular.ttf:fontsize=45:fontcolor=black:x=210:y=1180:box=1:boxcolor=white@0.8:".
     "boxborderw=5:text_align=R,format=rgb24\" -frames:v 1 $sender/$output_file.png", $op);
     return $output_file;
@@ -275,9 +263,42 @@ function send_result_photo($sender, $output_file) {
     unlink($photoPath);
 }
 
+function menu_send_photo($sender, $file, $reply_markup) {
+    global $BOT_TOKEN;
+
+    // Create a cURL handle
+    $curl = curl_init();
+    // Set the cURL options
+    curl_setopt_array($curl, [
+    CURLOPT_URL => "https://api.telegram.org/bot$BOT_TOKEN/sendPhoto",
+    CURLOPT_RETURNTRANSFER => true,
+    CURLOPT_POST => true,
+    CURLOPT_POSTFIELDS => [
+            'chat_id' => "$sender",
+            'photo' => new \CURLFile($file),
+            'caption' => "انتخاب کنید",
+            'reply_markup' => urldecode($reply_markup),
+        ],
+    ]);
+    echo $reply_markup;
+    // Execute the cURL request
+    $response = curl_exec($curl);
+    echo $response;
+    // Check if an error occurred
+    if (curl_errno($curl)) {
+        $error = curl_error($curl);
+        echo $error;
+        // Handle the error appropriately
+    }
+
+    // Close the cURL handle
+    curl_close($curl);
+    // Process the response from the Telegram Bot API
+}
+
 
 while(true) {
-    sleep(2);
+    sleep(1);
 $last_update_id = $pdo->query("SELECT * FROM `last_update_id` ORDER BY `id` DESC LIMIT 1")->fetchAll()[0]['update_id'];
 $last_update_id++;
 
@@ -294,8 +315,7 @@ foreach($updates as $update) {
         switch($update->message->text) {
             case '/start':
                 // on /start command
-                $image_id = 'AgACAgQAAxkBAAIDKGX-5d_coeosIu4Vluh6raWJQFD-AAKPwjEby9X5U0sjdscR_FXFAQADAgADeQADNAQ';
-                send("sendPhoto", "chat_id=$sender&photo=$image_id&reply_markup=$meme_selector_markup_encoded&caption=انتخاب کنید");
+                menu_send_photo($sender, "./samples/0-start-menu.jpg", $meme_selector_markup_encoded);
                 if ($pdo->query("SELECT * FROM `senders` WHERE user_id=$sender")->fetchAll()[0] != null) {
                     echo "\n New Message \n";
                 } else {
@@ -306,104 +326,106 @@ foreach($updates as $update) {
                 }
                 break;
             case '۱- دو تا پیشی در حال صحبت':
-                $image_id = 'BAACAgQAAxkBAAIDLGX-5j18EzH8dGE2z7YRWIGy-IW6AAIfFAACy9X5U2bIxOa_8MFJNAQ';
-                send("sendVideo", "chat_id=$sender&video=$image_id&reply_markup=$tkt_meme_setting_markup_encoded&caption=انتخاب کنید");
+                $image_id = 'BAACAgQAAxkBAAIfLmYK_MLWVUmlNouJHAvolVy-fr12AALnFgACD_JZUKXxBoSBFs5iNAQ';
+                menu_send_photo($sender, "./samples/1.mp4", $tkt_meme_setting_markup_encoded);
                 break;
             case '۲- Brother Eww!':
                 $image_id = 'BAACAgQAAxkBAAIDMGX-5omeYoXjQsHGD8SDZY3r2xrMAAIgFAACy9X5U9xVjb5NzO55NAQ';
-                send("sendVideo", "chat_id=$sender&video=$image_id&reply_markup=$meme_setting_markup_2_encoded&caption=انتخاب کنید");
+                menu_send_photo($sender, "./samples/2.mp4", $meme_setting_markup_2_encoded);
                 break;
             case '۳- سیس گرفتن راک':
                 $image_id = 'BAACAgQAAxkBAAIDMWX-5ruXOgg5As-sh8oassXXv8zCAAIhFAACy9X5U-HVkjvZFi3rNAQ';
-                send("sendVideo", "chat_id=$sender&video=$image_id&reply_markup=$meme_setting_markup_3_encoded&caption=انتخاب کنید");
+                menu_send_photo($sender, "./samples/3.mp4", $meme_setting_markup_3_encoded);
                 break;
             case '۴- نیکولاس کیج و پدرو پاسکال':
-                $image_id = 'BAACAgQAAxkBAAIDMmX-5tkzrQT01tEeHXWGZPpcrmTcAAIiFAACy9X5U1IAAdKb2GPSmTQE';
-                send("sendVideo", "chat_id=$sender&video=$image_id&reply_markup=$meme_setting_markup_4_encoded&caption=انتخاب کنید");
+                $image_id = 'BAACAgQAAxkBAAIfL2YK_M_XkQXFtiBNwe99lmfGMyIqAALoFgACD_JZUDT2AAF2qrwP5zQE';
+                menu_send_photo($sender, "./samples/4.mp4", $meme_setting_markup_4_encoded);
                 break;
             case '۵- شوکه شدن جان سینا':
                 $image_id = 'BAACAgQAAxkBAAIDM2X-5u6PIC5BXR3hyfLpQtIEbj0sAAIjFAACy9X5U3aIOfmWIPPeNAQ';
-                send("sendVideo", "chat_id=$sender&video=$image_id&reply_markup=$meme_setting_markup_5_encoded&caption=انتخاب کنید");
+                menu_send_photo($sender, "./samples/5.mp4", $meme_setting_markup_5_encoded);
                 break;
             case '۶- خنده خوان':
                 $image_id = 'BAACAgQAAxkBAAIDNGX-5xig8rdjx42u5gzqndrHezS0AAIkFAACy9X5U9h0GfGCpOv_NAQ';
-                send("sendVideo", "chat_id=$sender&video=$image_id&reply_markup=$meme_setting_markup_6_encoded&caption=انتخاب کنید");
+                menu_send_photo($sender, "./samples/6.mp4", $meme_setting_markup_6_encoded);
                 break;
             case '۷- گربه در حال رانندگی':
                 $image_id = 'BAACAgQAAxkBAAIDNWX-5zTufUVtJosBxzOmg8iH_yRmAAIlFAACy9X5U-0BjpDmfBvSNAQ';
-                send("sendVideo", "chat_id=$sender&video=$image_id&reply_markup=$meme_setting_markup_7_encoded&caption=انتخاب کنید");
+                menu_send_photo($sender, "./samples/7.mp4", $meme_setting_markup_7_encoded);
                 break;
             case '۸- گربه Mr. Fresh':
                 $image_id = 'BAACAgQAAxkBAAIDNmX-52mG2bPfLIV4a9JetPetX9OnAAImFAACy9X5U-sQZGpVKT1tNAQ';
-                send("sendVideo", "chat_id=$sender&video=$image_id&reply_markup=$meme_setting_markup_8_encoded&caption=انتخاب کنید");
+                menu_send_photo($sender, "./samples/8.mp4", $meme_setting_markup_8_encoded);
                 break;
             case '۹- گفتگوی پیشی و بز':
-                $image_id = 'BAACAgQAAxkBAAIDN2X-53saPRQGRnTNiT0pJuajmYpXAAInFAACy9X5U4lbdsZ9Z5uqNAQ';
-                send("sendVideo", "chat_id=$sender&video=$image_id&reply_markup=$meme_setting_markup_9_encoded&caption=انتخاب کنید");
+                $image_id = 'BAACAgQAAxkBAAIfMGYK_NsmYsFmy5yHnqV3I6GJlV3UAALpFgACD_JZUJt6dpkrPRqKNAQ';
+                menu_send_photo($sender, "./samples/9.mp4", $meme_setting_markup_9_encoded);
                 break;
             case '۱۰- پیشی در حال آره گفتن':
                 $image_id = 'BAACAgQAAxkBAAIDOGX-54BJrWlgNRe0FX_8YeJG4Pt7AAIoFAACy9X5U1ICM-kTNB3ANAQ';
-                send("sendVideo", "chat_id=$sender&video=$image_id&reply_markup=$meme_setting_markup_10_encoded&caption=انتخاب کنید");
+                menu_send_photo($sender, "./samples/10.mp4", $meme_setting_markup_10_encoded);
                 break;
             case '۱۱- جویدن خر':
                 $image_id = 'BAACAgQAAxkBAAIDOWX-54l5_VPBmnQvrP5tOqasL6uQAAIpFAACy9X5UyPyV9TgglJ8NAQ';
-                send("sendVideo", "chat_id=$sender&video=$image_id&reply_markup=$meme_setting_markup_11_encoded&caption=انتخاب کنید");
+                menu_send_photo($sender, "./samples/11.mp4", $meme_setting_markup_11_encoded);
                 break;
             case '۱۲- حسب‌الله در حال شمردن پول':
                 $image_id = 'BAACAgQAAxkBAAIDOmX-55AcZrI54_-WrjmlPpBinWylAAIqFAACy9X5U_VgzHw11WDaNAQ';
-                send("sendVideo", "chat_id=$sender&video=$image_id&reply_markup=$meme_setting_markup_12_encoded&caption=انتخاب کنید");
+                menu_send_photo($sender, "./samples/12.mp4", $meme_setting_markup_12_encoded);
                 break;
             case '۱۳- Disaster Girl':
                 $image_id = 'AgACAgQAAxkBAAIDO2X-55VcCSxVU8GU65N_0QygrworAAKUwjEby9X5U5bDhd9c1OFLAQADAgADeAADNAQ';
-                send("sendPhoto", "chat_id=$sender&photo=$image_id&reply_markup=$meme_setting_markup_13_encoded&caption=انتخاب کنید");
+                menu_send_photo($sender, "./samples/13.jpg", $meme_setting_markup_13_encoded);
                 break;
             case '۱۴- دوست پسر چشم چرون':
                 $image_id = 'AgACAgQAAxkBAAIDWGX-6LMfrDDc4KVaw6GUUw2l7xHbAAKVwjEby9X5U05AwYGlpVc3AQADAgADeAADNAQ';
-                send("sendPhoto", "chat_id=$sender&photo=$image_id&reply_markup=$meme_setting_markup_14_encoded&caption=انتخاب کنید");
+                menu_send_photo($sender, "./samples/14.jpg", $meme_setting_markup_14_encoded);
                 break;
             case '۱۵- کرمیت در حال مشاوره شیطانی':
-                $image_id = 'AgACAgQAAxkBAAIDWWX-6LxEuvP-J2vs28FNewaZiDtUAAKWwjEby9X5U4Y6falN0By6AQADAgADeQADNAQ';
-                send("sendPhoto", "chat_id=$sender&photo=$image_id&reply_markup=$meme_setting_markup_15_encoded&caption=انتخاب کنید");
+                $image_id= 'AgACAgQAAxkBAAIfLWYK_Hla0uJI9t_Bk7KDG8G6vha2AAIpxTEbD_JZUGUQXisUnhCkAQADAgADeQADNAQ';
+                menu_send_photo($sender, "./samples/15.jpg", $meme_setting_markup_15_encoded);
                 break;
             case '۱۶- Drakepost':
                 $image_id = 'AgACAgQAAxkBAAIDWmX-6MLeMoKHHpKLOr6jZyWjCtF0AAKXwjEby9X5U7i-7zXUf4fwAQADAgADeAADNAQ';
-                send("sendPhoto", "chat_id=$sender&photo=$image_id&reply_markup=$meme_setting_markup_16_encoded&caption=انتخاب کنید");
+                menu_send_photo($sender, "./samples/16.jpg", $meme_setting_markup_16_encoded);
                 break;
             case '۱۷- خروجی ۱۲':
                 $image_id = 'AgACAgQAAxkBAAIDW2X-6McRzbfw_AzV3-RshDs_pCaSAAKYwjEby9X5U_ADHI1FsYQDAQADAgADeAADNAQ';
+                menu_send_photo($sender, "./samples/17.jpg", $meme_setting_markup_17_encoded);
                 send("sendPhoto", "chat_id=$sender&photo=$image_id&reply_markup=$meme_setting_markup_17_encoded&caption=انتخاب کنید");
                 break;
             case '۱۸- Facepalm':
                 $image_id = 'AgACAgQAAxkBAAIDXGX-6Mt2PYQ9GudTkSHjc8QGDGBaAAKZwjEby9X5U6s4FwEIOm3EAQADAgADeAADNAQ';
-                send("sendPhoto", "chat_id=$sender&photo=$image_id&reply_markup=$meme_setting_markup_18_encoded&caption=انتخاب کنید");
+                menu_send_photo($sender, "./samples/18.jpg", $meme_setting_markup_18_encoded);
                 break;
             case '۱۹- هارولد در حال مخفی کردن درد':
                 $image_id = 'AgACAgQAAxkBAAIDXmX-6UajFA4G0zDzLJIMhP82_uVaAAKbwjEby9X5U-Q9RFbjO-tGAQADAgADeQADNAQ';
-                send("sendPhoto", "chat_id=$sender&photo=$image_id&reply_markup=$meme_setting_markup_19_encoded&caption=انتخاب کنید");
+                menu_send_photo($sender, "./samples/19.jpg", $meme_setting_markup_19_encoded);
                 break;
             case '۲۰- اسپایدرمن':
                 $image_id = 'AgACAgQAAxkBAAIDXWX-6NCk86HpAAFy8fjVGDcDdOc2HQACmsIxG8vV-VMAAUMmHtjNPj0BAAMCAAN4AAM0BA';
+                menu_send_photo($sender, "./samples/20.jpg", $meme_setting_markup_20_encoded);
                 send("sendPhoto", "chat_id=$sender&photo=$image_id&reply_markup=$meme_setting_markup_20_encoded&caption=انتخاب کنید");
                 break;
             case '۲۱- ذکاوت!':
-                $image_id = 'AgACAgQAAxkBAAIDjGX-6qn2rkM24wWf-sS3E4W3M69fAAKcwjEby9X5U_MJ-AJ157RUAQADAgADeAADNAQ';
-                send("sendPhoto", "chat_id=$sender&photo=$image_id&reply_markup=$meme_setting_markup_21_encoded&caption=انتخاب کنید");
+                $image_id = 'AgACAgQAAxkBAAIfMWYK_ORg6PIpozWqNoHv7mTneQZjAAItxTEbD_JZUG0h13Vd0uoxAQADAgADeAADNAQ';
+                menu_send_photo($sender, "./samples/21.jpg", $meme_setting_markup_21_encoded);
                 break;
             case "۲۲- مورینیو: If I speak I'm in big trouble":
-                $image_id = 'BAACAgQAAxkBAAIDYGX-6VTnrOwQprW_Qs7FfRPVN6MkAAIsFAACy9X5U-ctl8tLsVxtNAQ';
-                send("sendVideo", "chat_id=$sender&video=$image_id&reply_markup=$meme_setting_markup_22_encoded&caption=انتخاب کنید");
+                $image_id = 'BAACAgQAAxkBAAIfb2YLAizYangMrUuMmeqTPjDIrMrOAALvFgACD_JZUGpwlcgYVXypNAQ';
+                menu_send_photo($sender, "./samples/22.mp4", $meme_setting_markup_22_encoded);
                 break;
             case '۲۳- سگ گریان':
                 $image_id = 'BAACAgQAAxkBAAIDYWX-6VyNvywKcdsf-SJyIqCcuBQfAAItFAACy9X5UzNErAnKUhutNAQ';
-                send("sendVideo", "chat_id=$sender&video=$image_id&reply_markup=$meme_setting_markup_23_encoded&caption=انتخاب کنید");
+                menu_send_photo($sender, "./samples/23.mp4", $meme_setting_markup_23_encoded);
                 break;
             case '۲۴- دعوای پیشی‌ها':
                 $image_id = 'BAACAgQAAxkBAAIDYmX-6WMLsA9EDuSPxXl3JbNE6p0bAAIuFAACy9X5U2Ejc3RchZJ6NAQ';
-                send("sendVideo", "chat_id=$sender&video=$image_id&reply_markup=$meme_setting_markup_24_encoded&caption=انتخاب کنید");
+                menu_send_photo($sender, "./samples/24.mp4", $meme_setting_markup_24_encoded);
                 break;
             case '۲۵- ترامپ: Somebody had to do it, I am the chosen one':
                 $image_id = 'BAACAgQAAxkBAAIDY2X-6WbhLyT18oIUEt80oJXRBYfRAAIvFAACy9X5U08fUtw_IUD_NAQ';
-                send("sendVideo", "chat_id=$sender&video=$image_id&reply_markup=$meme_setting_markup_25_encoded&caption=انتخاب کنید");
+                menu_send_photo($sender, "./samples/25.mp4", $meme_setting_markup_25_encoded);
                 break;
             default:
                 $checkpoint = $pdo->query("SELECT `checkpoint` FROM `senders` WHERE user_id=$sender")->fetchAll()[0];
@@ -568,9 +590,9 @@ foreach($updates as $update) {
                     $results['text_two'] != null && $results['text_three'] != null &&
                     $results['text_four'] != null && $results['text_five'] != null) {
                         create_input_video($sender, $results['background'], "memes/1-two-kitties-talking/1-tkt.mov");
-                        $output_file = add_texts_tkt([break_string($results['text_one'], 35),
+                        $output_file = add_texts_tkt([break_string($results['text_one'], 32),
                             break_string($results['text_two'], 14),
-                            break_string($results['text_three'], 35),
+                            break_string($results['text_three'], 32),
                             break_string($results['text_four'], 14),
                             break_string($results['text_five'], 14)], $sender);
                         send_result_video($sender, $output_file);
@@ -587,7 +609,7 @@ foreach($updates as $update) {
                 $results = $pdo->query("SELECT * FROM `senders` WHERE user_id=$sender")->fetchAll()[0];
                 if ($results['background'] != null && $results['texts'] != null) {
                         create_input_video($sender, $results['background'], "memes/2-brother-eww/2-brother-eww.mov");
-                        $output_file = add_texts_type2(break_string($results['texts'], 30), $sender);
+                        $output_file = add_texts_type2(break_string($results['texts'], 28), $sender);
                         send_result_video($sender, $output_file);
                         $stmt = $pdo->prepare('UPDATE `senders` SET `checkpoint` = 0, `background` = NULL,' .
                             '`texts` = NULL WHERE `user_id` = :si;');
@@ -601,7 +623,7 @@ foreach($updates as $update) {
                 $results = $pdo->query("SELECT * FROM `senders` WHERE user_id=$sender")->fetchAll()[0];
                 if ($results['background'] != null && $results['texts'] != null) {
                         create_input_video($sender, $results['background'], "memes/3-the-rock-sus/3-the-rock-sus.mov");
-                        $output_file = add_texts_type2(break_string($results['texts'], 30), $sender);
+                        $output_file = add_texts_type2(break_string($results['texts'], 28), $sender);
                         send_result_video($sender, $output_file);
                         $stmt = $pdo->prepare('UPDATE `senders` SET `checkpoint` = 0, `background` = NULL,' .
                             '`texts` = NULL WHERE `user_id` = :si;');
@@ -615,7 +637,7 @@ foreach($updates as $update) {
                 $results = $pdo->query("SELECT * FROM `senders` WHERE user_id=$sender")->fetchAll()[0];
                 if ($results['background'] != null && $results['texts'] != null) {
                         create_input_video($sender, $results['background'], "memes/4-cage-and-pascal/4-cage-and-pascal.mov");
-                        $output_file = add_texts_type2(break_string($results['texts'], 30), $sender);
+                        $output_file = add_texts_type2(break_string($results['texts'], 28), $sender);
                         send_result_video($sender, $output_file);
                         $stmt = $pdo->prepare('UPDATE `senders` SET `checkpoint` = 0, `background` = NULL,' .
                             '`texts` = NULL WHERE `user_id` = :si;');
@@ -643,7 +665,7 @@ foreach($updates as $update) {
                 $results = $pdo->query("SELECT * FROM `senders` WHERE user_id=$sender")->fetchAll()[0];
                 if ($results['background'] != null && $results['texts'] != null) {
                         create_input_video($sender, $results['background'], "memes/6-juan-laughing/6-juan-laughing.mov");
-                        $output_file = add_texts_type2(break_string($results['texts'], 30), $sender);
+                        $output_file = add_texts_type2(break_string($results['texts'], 28), $sender);
                         send_result_video($sender, $output_file);
                         $stmt = $pdo->prepare('UPDATE `senders` SET `checkpoint` = 0, `background` = NULL,' .
                             '`texts` = NULL WHERE `user_id` = :si;');
@@ -671,7 +693,7 @@ foreach($updates as $update) {
                 $results = $pdo->query("SELECT * FROM `senders` WHERE user_id=$sender")->fetchAll()[0];
                 if ($results['background'] != null && $results['texts'] != null) {
                         create_input_video($sender, $results['background'], "memes/8-mr-fresh-cat/8-mr-fresh-cat.mov");
-                        $output_file = add_texts_type2(break_string($results['texts'], 30), $sender);
+                        $output_file = add_texts_type2(break_string($results['texts'], 28), $sender);
                         send_result_video($sender, $output_file);
                         $stmt = $pdo->prepare('UPDATE `senders` SET `checkpoint` = 0, `background` = NULL,' .
                             '`texts` = NULL WHERE `user_id` = :si;');
@@ -699,7 +721,7 @@ foreach($updates as $update) {
                 $results = $pdo->query("SELECT * FROM `senders` WHERE user_id=$sender")->fetchAll()[0];
                 if ($results['background'] != null && $results['texts'] != null) {
                         create_input_video($sender, $results['background'], "memes/10-kitty-saying-arreh/10-kitty-saying-arreh.mov");
-                        $output_file = add_texts_type2(break_string($results['texts'], 30), $sender);
+                        $output_file = add_texts_type2(break_string($results['texts'], 28), $sender);
                         send_result_video($sender, $output_file);
                         $stmt = $pdo->prepare('UPDATE `senders` SET `checkpoint` = 0, `background` = NULL,' .
                             '`texts` = NULL WHERE `user_id` = :si;');
@@ -727,7 +749,7 @@ foreach($updates as $update) {
                 $results = $pdo->query("SELECT * FROM `senders` WHERE user_id=$sender")->fetchAll()[0];
                 if ($results['background'] != null && $results['texts'] != null) {
                         create_input_video($sender, $results['background'], "memes/12-hasbulla-counting-money/12-hasbulla-counting-money.mov");
-                        $output_file = add_texts_type2(break_string($results['texts'], 30), $sender);
+                        $output_file = add_texts_type2(break_string($results['texts'], 28), $sender);
                         send_result_video($sender, $output_file);
                         $stmt = $pdo->prepare('UPDATE `senders` SET `checkpoint` = 0, `background` = NULL,' .
                             '`texts` = NULL WHERE `user_id` = :si;');
@@ -796,8 +818,8 @@ foreach($updates as $update) {
             case 'create_17':
                 $results = $pdo->query("SELECT * FROM `senders` WHERE user_id=$sender")->fetchAll()[0];
                 if ($results['text_one'] != null && $results['text_two'] != null && $results['text_three'] != null) {
-                        $output_file = create_exit12_meme([break_string($results['text_one'], 25),
-                            break_string($results['text_two'], 25), break_string($results['text_three'], 25)], $sender);
+                        $output_file = create_exit12_meme([break_string($results['text_one'], 8),
+                            break_string($results['text_two'], 10), break_string($results['text_three'], 11)], $sender);
                         send_result_photo($sender, $output_file);
                         $stmt = $pdo->prepare('UPDATE `senders` SET `checkpoint` = 0, `background` = NULL,' .
                             '`texts` = NULL WHERE `user_id` = :si;');
@@ -864,7 +886,7 @@ foreach($updates as $update) {
                 $results = $pdo->query("SELECT * FROM `senders` WHERE user_id=$sender")->fetchAll()[0];
                 if ($results['background'] != null && $results['texts'] != null) {
                         create_input_video($sender, $results['background'], "memes/22-if-i-speak-im-in-big-trouble/22-if-i-speak-im-in-big-trouble.mov");
-                        $output_file = add_texts_type2(break_string($results['texts'], 40), $sender);
+                        $output_file = add_texts_type2(break_string($results['texts'], 30), $sender);
                         send_result_video($sender, $output_file);
                         $stmt = $pdo->prepare('UPDATE `senders` SET `checkpoint` = 0, `background` = NULL,' .
                             '`texts` = NULL WHERE `user_id` = :si;');
@@ -878,7 +900,7 @@ foreach($updates as $update) {
                 $results = $pdo->query("SELECT * FROM `senders` WHERE user_id=$sender")->fetchAll()[0];
                 if ($results['background'] != null && $results['texts'] != null) {
                         create_input_video($sender, $results['background'], "memes/23-crying-dog/crying-dog.mov");
-                        $output_file = add_texts_type2(break_string($results['texts'], 40), $sender);
+                        $output_file = add_texts_type2(break_string($results['texts'], 30), $sender);
                         send_result_video($sender, $output_file);
                         $stmt = $pdo->prepare('UPDATE `senders` SET `checkpoint` = 0, `background` = NULL,' .
                             '`texts` = NULL WHERE `user_id` = :si;');
@@ -892,7 +914,7 @@ foreach($updates as $update) {
                 $results = $pdo->query("SELECT * FROM `senders` WHERE user_id=$sender")->fetchAll()[0];
                 if ($results['background'] != null && $results['texts'] != null) {
                         create_input_video($sender, $results['background'], "memes/24-cat-hitting-another-cat/cat-fight.mov");
-                        $output_file = add_texts_type2(break_string($results['texts'], 40), $sender);
+                        $output_file = add_texts_type2(break_string($results['texts'], 30), $sender);
                         send_result_video($sender, $output_file);
                         $stmt = $pdo->prepare('UPDATE `senders` SET `checkpoint` = 0, `background` = NULL,' .
                             '`texts` = NULL WHERE `user_id` = :si;');
@@ -906,7 +928,7 @@ foreach($updates as $update) {
                 $results = $pdo->query("SELECT * FROM `senders` WHERE user_id=$sender")->fetchAll()[0];
                 if ($results['background'] != null && $results['texts'] != null) {
                         create_input_video($sender, $results['background'], "memes/25-somebody-had-to-do-it/trump.mov");
-                        $output_file = add_texts_type2(break_string($results['texts'], 40), $sender);
+                        $output_file = add_texts_type2(break_string($results['texts'], 30), $sender);
                         send_result_video($sender, $output_file);
                         $stmt = $pdo->prepare('UPDATE `senders` SET `checkpoint` = 0, `background` = NULL,' .
                             '`texts` = NULL WHERE `user_id` = :si;');

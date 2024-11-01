@@ -87,7 +87,7 @@ $meme_selector_keyboard_markup = [
     ],
 ];
 //encode
-$meme_selector_markup_encoded = urlencode(json_encode($meme_selector_keyboard_markup));
+$meme_selector_markup_encoded = json_encode($meme_selector_keyboard_markup);
 
 //________________________________________________________
 //________________________________________________________
@@ -211,7 +211,7 @@ $meme_setting_markup_2 = [
         [$render_button_2],
     ]
 ];
-$meme_setting_markup_2_encoded = urlencode(json_encode($meme_setting_markup_2));
+$meme_setting_markup_2_encoded = json_encode($meme_setting_markup_2);
 $meme_setting_markup_3 = [
     'inline_keyboard' => [
         [$set_background_button],
@@ -219,7 +219,7 @@ $meme_setting_markup_3 = [
         [$render_button_3],
     ]
 ];
-$meme_setting_markup_3_encoded = urlencode(json_encode($meme_setting_markup_3));
+$meme_setting_markup_3_encoded = json_encode($meme_setting_markup_3);
 $meme_setting_markup_4 = [
     'inline_keyboard' => [
         [$set_background_button],
@@ -227,7 +227,7 @@ $meme_setting_markup_4 = [
         [$render_button_4],
     ]
 ];
-$meme_setting_markup_4_encoded = urlencode(json_encode($meme_setting_markup_4));
+$meme_setting_markup_4_encoded = json_encode($meme_setting_markup_4);
 $meme_setting_markup_5 = [
     'inline_keyboard' => [
         [$set_background_button],
@@ -235,7 +235,7 @@ $meme_setting_markup_5 = [
         [$render_button_5],
     ]
 ];
-$meme_setting_markup_5_encoded = urlencode(json_encode($meme_setting_markup_5));
+$meme_setting_markup_5_encoded = json_encode($meme_setting_markup_5);
 $meme_setting_markup_6 = [
     'inline_keyboard' => [
         [$set_background_button],
@@ -243,7 +243,7 @@ $meme_setting_markup_6 = [
         [$render_button_6],
     ]
 ];
-$meme_setting_markup_6_encoded = urlencode(json_encode($meme_setting_markup_6));
+$meme_setting_markup_6_encoded = json_encode($meme_setting_markup_6);
 $meme_setting_markup_7 = [
     'inline_keyboard' => [
         [$set_background_button],
@@ -251,7 +251,7 @@ $meme_setting_markup_7 = [
         [$render_button_7],
     ]
 ];
-$meme_setting_markup_7_encoded = urlencode(json_encode($meme_setting_markup_7));
+$meme_setting_markup_7_encoded = json_encode($meme_setting_markup_7);
 $meme_setting_markup_8 = [
     'inline_keyboard' => [
         [$set_background_button],
@@ -259,7 +259,7 @@ $meme_setting_markup_8 = [
         [$render_button_8],
     ]
 ];
-$meme_setting_markup_8_encoded = urlencode(json_encode($meme_setting_markup_8));
+$meme_setting_markup_8_encoded = json_encode($meme_setting_markup_8);
 $meme_setting_markup_9 = [
     'inline_keyboard' => [
         [$set_background_button],
@@ -267,7 +267,7 @@ $meme_setting_markup_9 = [
         [$render_button_9],
     ]
 ];
-$meme_setting_markup_9_encoded = urlencode(json_encode($meme_setting_markup_9));
+$meme_setting_markup_9_encoded = json_encode($meme_setting_markup_9);
 $meme_setting_markup_10 = [
     'inline_keyboard' => [
         [$set_background_button],
@@ -275,7 +275,7 @@ $meme_setting_markup_10 = [
         [$render_button_10],
     ]
 ];
-$meme_setting_markup_10_encoded = urlencode(json_encode($meme_setting_markup_10));
+$meme_setting_markup_10_encoded = json_encode($meme_setting_markup_10);
 $meme_setting_markup_11 = [
     'inline_keyboard' => [
         [$set_background_button],
@@ -283,7 +283,7 @@ $meme_setting_markup_11 = [
         [$render_button_11],
     ]
 ];
-$meme_setting_markup_11_encoded = urlencode(json_encode($meme_setting_markup_11));
+$meme_setting_markup_11_encoded = json_encode($meme_setting_markup_11);
 $meme_setting_markup_12 = [
     'inline_keyboard' => [
         [$set_background_button],
@@ -291,7 +291,7 @@ $meme_setting_markup_12 = [
         [$render_button_12],
     ]
 ];
-$meme_setting_markup_12_encoded = urlencode(json_encode($meme_setting_markup_12));
+$meme_setting_markup_12_encoded = json_encode($meme_setting_markup_12);
 //just text
 $meme_setting_markup_13 = [
     'inline_keyboard' => [
@@ -299,7 +299,7 @@ $meme_setting_markup_13 = [
         [$render_button_13],
     ]
 ];
-$meme_setting_markup_13_encoded = urlencode(json_encode($meme_setting_markup_13));
+$meme_setting_markup_13_encoded = json_encode($meme_setting_markup_13);
 
 //meme 14 confs moved to it's own section at the bottom
 
@@ -309,7 +309,7 @@ $meme_setting_markup_15 = [
         [$render_button_15],
     ]
 ];
-$meme_setting_markup_15_encoded = urlencode(json_encode($meme_setting_markup_15));
+$meme_setting_markup_15_encoded = json_encode($meme_setting_markup_15);
 
 //meme 16 & 17 confs moved to it's own section at the bottom
 
@@ -319,7 +319,7 @@ $meme_setting_markup_18 = [
         [$render_button_18],
     ]
 ];
-$meme_setting_markup_18_encoded = urlencode(json_encode($meme_setting_markup_18));
+$meme_setting_markup_18_encoded = json_encode($meme_setting_markup_18);
 
 //meme 16 & 17 confs moved to it's own section at the bottom
 
@@ -329,14 +329,14 @@ $meme_setting_markup_20 = [
         [$render_button_20],
     ]
 ];
-$meme_setting_markup_20_encoded = urlencode(json_encode($meme_setting_markup_20));
+$meme_setting_markup_20_encoded = json_encode($meme_setting_markup_20);
 $meme_setting_markup_21 = [
     'inline_keyboard' => [
         [$set_text_button],
         [$render_button_21],
     ]
 ];
-$meme_setting_markup_21_encoded = urlencode(json_encode($meme_setting_markup_21));
+$meme_setting_markup_21_encoded = json_encode($meme_setting_markup_21);
 $meme_setting_markup_22 = [
     'inline_keyboard' => [
         [$set_background_button],
@@ -344,7 +344,7 @@ $meme_setting_markup_22 = [
         [$render_button_22],
     ]
 ];
-$meme_setting_markup_22_encoded = urlencode(json_encode($meme_setting_markup_22));
+$meme_setting_markup_22_encoded = json_encode($meme_setting_markup_22);
 $meme_setting_markup_23 = [
     'inline_keyboard' => [
         [$set_background_button],
@@ -352,7 +352,7 @@ $meme_setting_markup_23 = [
         [$render_button_23],
     ]
 ];
-$meme_setting_markup_23_encoded = urlencode(json_encode($meme_setting_markup_23));
+$meme_setting_markup_23_encoded = json_encode($meme_setting_markup_23);
 $meme_setting_markup_24 = [
     'inline_keyboard' => [
         [$set_background_button],
@@ -360,7 +360,7 @@ $meme_setting_markup_24 = [
         [$render_button_24],
     ]
 ];
-$meme_setting_markup_24_encoded = urlencode(json_encode($meme_setting_markup_24));
+$meme_setting_markup_24_encoded = json_encode($meme_setting_markup_24);
 $meme_setting_markup_25 = [
     'inline_keyboard' => [
         [$set_background_button],
@@ -368,7 +368,7 @@ $meme_setting_markup_25 = [
         [$render_button_25],
     ]
 ];
-$meme_setting_markup_25_encoded = urlencode(json_encode($meme_setting_markup_25));
+$meme_setting_markup_25_encoded = json_encode($meme_setting_markup_25);
 
 //distracted_bf_meme
 $set_first_text_button_dbf = [
@@ -393,7 +393,7 @@ $meme_setting_markup_14 = [
         [$render_button_14],
     ]
 ];
-$meme_setting_markup_14_encoded = urlencode(json_encode($meme_setting_markup_14));
+$meme_setting_markup_14_encoded = json_encode($meme_setting_markup_14);
 
 //drakepost meme
 $set_first_text_button_dp = [
@@ -412,7 +412,7 @@ $meme_setting_markup_16 = [
         [$render_button_16],
     ]
 ];
-$meme_setting_markup_16_encoded = urlencode(json_encode($meme_setting_markup_16));
+$meme_setting_markup_16_encoded = json_encode($meme_setting_markup_16);
 
 //exit12 meme
 $set_first_text_button_e12 = [
@@ -437,7 +437,7 @@ $meme_setting_markup_17 = [
     [$render_button_17]
     ]
 ];
-$meme_setting_markup_17_encoded = urlencode(json_encode($meme_setting_markup_17));
+$meme_setting_markup_17_encoded = json_encode($meme_setting_markup_17);
 
 //hide the pain meme
 $set_first_text_button_hdp = [
@@ -456,7 +456,7 @@ $meme_setting_markup_19 = [
         [$render_button_19],
     ]
 ];
-$meme_setting_markup_19_encoded = urlencode(json_encode($meme_setting_markup_19));
+$meme_setting_markup_19_encoded = json_encode($meme_setting_markup_19);
 
 //two_kitties_talking_meme
 $set_first_text_button_tkt = [
@@ -493,4 +493,4 @@ $tkt_meme_setting_markup = [
         [$render_button_1],
     ]
 ];
-$tkt_meme_setting_markup_encoded = urlencode(json_encode($tkt_meme_setting_markup));
+$tkt_meme_setting_markup_encoded = json_encode($tkt_meme_setting_markup);
