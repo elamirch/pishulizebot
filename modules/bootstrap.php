@@ -38,3 +38,7 @@
     $user = new User;
     $telegram = new Telegram;
     $memes = new Memes;
+    
+    if(!is_dir("files")){
+        mkdir("files");
+    }

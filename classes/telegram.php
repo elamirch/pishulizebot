@@ -73,6 +73,20 @@ class Telegram {
         return curl($url, $data);
     }
 
+    public function sendMenuVideo($user_id, $videoPath, $reply_markup) {
+        global $BOT_TOKEN;
+        
+        $data = array(
+            'chat_id' => "$user_id",
+            'video' => new \CURLFile($videoPath),
+            'caption' => "انتخاب کنید",
+            'reply_markup' => urldecode($reply_markup),
+        );
+
+        $url = "https://api.telegram.org/bot$BOT_TOKEN/sendVideo";
+        return curl($url, $data);
+    }
+
     public function getFile($file_id) {
         global $BOT_TOKEN;
         $data = array(

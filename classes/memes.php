@@ -27,11 +27,11 @@ class Memes {
             case '12':
                 return $this->create_simple_video_meme($user_id, $texts  );
             case '13':
-                return $this->create_simple_video_meme($user_id, $texts  );
+                return $this->create_simple_photo_meme($user_id, $texts, "memes/13-disaster-girl/disaster-girl.png");
             case '14':
                 return $this->create_distracted_bf_meme($user_id, $texts);
             case '15':
-                return $this->create_simple_photo_meme($user_id, $texts  , "memes/15-evil-kermit/evil-kermit.png");
+                return $this->create_simple_photo_meme($user_id, $texts, "memes/15-evil-kermit/evil-kermit.png");
             case '16':
                 return $this->create_drakepost_meme($user_id, $texts);
             case '17':
@@ -106,7 +106,6 @@ class Memes {
         "drawtext=text='$meow_three':fontfile=Vazirmatn-Regular.ttf:fontsize=32:fontcolor=black:x=380:y=350:" .
         "box=1:boxcolor=white@0.8:enable='between(t,11,12)' \" -c:v libx264 -c:a copy files/$user_id/$output_file.mp4 2>&1", $op);
     
-        unlink("files/$user_id/input.mp4");
         return "files/$user_id/$output_file.mp4";
     }
 
@@ -129,7 +128,7 @@ class Memes {
         exec("ffmpeg -i $meme_path -vf \"drawtext=text='‫$text_refined':" .
         "fontfile=Vazirmatn-Regular.ttf:fontsize=36:fontcolor=black:x=50:y=50:box=1:" .
         "boxcolor=white@0.8:boxborderw=5 ,format=rgb24\" -frames:v 1 files/$user_id/$output_file.png", $op);
-        return "files/$user_id/$output_file.mp4";
+        return "files/$user_id/$output_file.png";
     }
 
     private function create_distracted_bf_meme($user_id, $texts) {
@@ -144,7 +143,7 @@ class Memes {
         "black:x=430:y=260:box=1:boxcolor=white@0.8:boxborderw=5 ,drawtext=text='‫$text_3_dbf':".
         "fontfile=Vazirmatn-Regular.ttf:fontsize=36:fontcolor=black:x=100:y=400:box=1:".
         "boxcolor=white@0.8:boxborderw=5 ,format=rgb24\" -frames:v 1 files/$user_id/$output_file.png", $op);
-        return "files/$user_id/$output_file.mp4";
+        return "files/$user_id/$output_file.png";
     }
 
     private function create_drakepost_meme($user_id, $texts) {
@@ -156,10 +155,10 @@ class Memes {
         "Vazirmatn-Regular.ttf:fontsize=36:fontcolor=black:x=400:y=50:box=1:boxcolor=white@0.8:".
         "boxborderw=5 ,drawtext=text='‫$text_2_dp':fontfile=Vazirmatn-Regular.ttf:fontsize=36:fontcolor=".
         "black:x=400:y=450:box=1:boxcolor=white@0.8:boxborderw=5 ,format=rgb24\" -frames:v 1 files/$user_id/$output_file.png", $op);
-        return "files/$user_id/$output_file.mp4";
+        return "files/$user_id/$output_file.png";
     }
 
-    function create_exit12_meme($user_id, $texts) {
+    private function create_exit12_meme($user_id, $texts) {
         $text_1_e12 = str_replace('0@0', "\n‫", str_replace(':', '\:', escapeshellcmd(implode('0@0', $texts[0]))));
         $text_2_e12 = str_replace('0@0', "\n‫", str_replace(':', '\:', escapeshellcmd(implode('0@0', $texts[1]))));
         $text_3_e12 = str_replace('0@0', "\n‫", str_replace(':', '\:', escapeshellcmd(implode('0@0', $texts[2]))));
@@ -172,10 +171,10 @@ class Memes {
         "=Vazirmatn-Regular.ttf:fontsize=24:fontcolor=black:x=335:y=540:box=1:boxcolor=".
         "white@0.8:boxborderw=5 ,format=rgb24\" -frames:v 1 files/$user_id/$output_file.png", $op);
         
-        return "files/$user_id/$output_file.mp4";
+        return "files/$user_id/$output_file.png";
     }
 
-    function create_hide_the_pain_meme($user_id, $texts) {
+    private function create_hide_the_pain_meme($user_id, $texts) {
         $text_1_hdp = str_replace('0@0', "\n‫", str_replace(':', '\:', escapeshellcmd(implode('0@0', $texts[0]))));
         $text_2_hdp = str_replace('0@0', "\n‫", str_replace(':', '\:', escapeshellcmd(implode('0@0', $texts[1]))));
         $output_file = uniqid("output");
@@ -184,6 +183,14 @@ class Memes {
         ":fontsize=45:fontcolor=black:x=110:y=100:box=1:boxcolor=white@0.8:boxborderw=5 ,drawtext=text='‫$text_2_hdp'".
         ":fontfile=Vazirmatn-Regular.ttf:fontsize=45:fontcolor=black:x=210:y=1180:box=1:boxcolor=white@0.8:".
         "boxborderw=5 ,format=rgb24\" -frames:v 1 files/$user_id/$output_file.png", $op);
-        return "files/$user_id/$output_file.mp4";
+        return "files/$user_id/$output_file.png";
+    }
+
+    public function empty_files_dir($user_id)
+    {
+        foreach(glob("files/$user_id/*") as $file)
+        {
+            unlink($file);
+        }
     }
 }

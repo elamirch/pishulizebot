@@ -236,109 +236,133 @@ foreach($updates as $update) {
                 case '/start':// on /start command
                     echo "\nStarted\n";
                     $user->flush($user_id);
-                    var_dump($meme_selector_markup_encoded);
-                    echo $user_id;
+                    $memes->empty_files_dir($user_id);
                     var_dump($telegram->sendMenuPhoto($user_id, "./samples/0-start-menu.jpg", $meme_selector_markup_encoded));
                     break;
                 case '۱- دو تا پیشی در حال صحبت':
                     $user->flush($user_id);
-                    $telegram->sendMenuPhoto($user_id, "./samples/1.mp4", $tkt_meme_setting_markup_encoded);
+                    $memes->empty_files_dir($user_id);
+                    $telegram->sendMenuVideo($user_id, "./samples/1.mp4", $tkt_meme_setting_markup_encoded);
                     break;
                 case '۲- Brother Eww!':
                     $user->flush($user_id);
-                    $telegram->sendMenuPhoto($user_id, "./samples/2.mp4", $meme_setting_markup_2_encoded);
+                    $memes->empty_files_dir($user_id);
+                    $telegram->sendMenuVideo($user_id, "./samples/2.mp4", $meme_setting_markup_2_encoded);
                     break;
                 case '۳- سیس گرفتن راک':
                     $user->flush($user_id);
-                    $telegram->sendMenuPhoto($user_id, "./samples/3.mp4", $meme_setting_markup_3_encoded);
+                    $memes->empty_files_dir($user_id);
+                    $telegram->sendMenuVideo($user_id, "./samples/3.mp4", $meme_setting_markup_3_encoded);
                     break;
                 case '۴- نیکولاس کیج و پدرو پاسکال':
                     $user->flush($user_id);
-                    $telegram->sendMenuPhoto($user_id, "./samples/4.mp4", $meme_setting_markup_4_encoded);
+                    $memes->empty_files_dir($user_id);
+                    $telegram->sendMenuVideo($user_id, "./samples/4.mp4", $meme_setting_markup_4_encoded);
                     break;
                 case '۵- شوکه شدن جان سینا':
                     $user->flush($user_id);
-                    $telegram->sendMenuPhoto($user_id, "./samples/5.mp4", $meme_setting_markup_5_encoded);
+                    $memes->empty_files_dir($user_id);
+                    $telegram->sendMenuVideo($user_id, "./samples/5.mp4", $meme_setting_markup_5_encoded);
                     break;
                 case '۶- خنده خوان':
                     $user->flush($user_id);
-                    $telegram->sendMenuPhoto($user_id, "./samples/6.mp4", $meme_setting_markup_6_encoded);
+                    $memes->empty_files_dir($user_id);
+                    $telegram->sendMenuVideo($user_id, "./samples/6.mp4", $meme_setting_markup_6_encoded);
                     break;
                 case '۷- گربه در حال رانندگی':
                     $user->flush($user_id);
-                    $telegram->sendMenuPhoto($user_id, "./samples/7.mp4", $meme_setting_markup_7_encoded);
+                    $memes->empty_files_dir($user_id);
+                    $telegram->sendMenuVideo($user_id, "./samples/7.mp4", $meme_setting_markup_7_encoded);
                     break;
                 case '۸- گربه Mr. Fresh':
                     $user->flush($user_id);
-                    $telegram->sendMenuPhoto($user_id, "./samples/8.mp4", $meme_setting_markup_8_encoded);
+                    $memes->empty_files_dir($user_id);
+                    $telegram->sendMenuVideo($user_id, "./samples/8.mp4", $meme_setting_markup_8_encoded);
                     break;
                 case '۹- گفتگوی پیشی و بز':
                     $user->flush($user_id);
-                    $telegram->sendMenuPhoto($user_id, "./samples/9.mp4", $meme_setting_markup_9_encoded);
+                    $memes->empty_files_dir($user_id);
+                    $telegram->sendMenuVideo($user_id, "./samples/9.mp4", $meme_setting_markup_9_encoded);
                     break;
                 case '۱۰- پیشی در حال آره گفتن':
                     $user->flush($user_id);
-                    $telegram->sendMenuPhoto($user_id, "./samples/10.mp4", $meme_setting_markup_10_encoded);
+                    $memes->empty_files_dir($user_id);
+                    $telegram->sendMenuVideo($user_id, "./samples/10.mp4", $meme_setting_markup_10_encoded);
                     break;
                 case '۱۱- جویدن خر':
                     $user->flush($user_id);
-                    $telegram->sendMenuPhoto($user_id, "./samples/11.mp4", $meme_setting_markup_11_encoded);
+                    $memes->empty_files_dir($user_id);
+                    $telegram->sendMenuVideo($user_id, "./samples/11.mp4", $meme_setting_markup_11_encoded);
                     break;
                 case '۱۲- حسب‌الله در حال شمردن پول':
                     $user->flush($user_id);
-                    $telegram->sendMenuPhoto($user_id, "./samples/12.mp4", $meme_setting_markup_12_encoded);
+                    $memes->empty_files_dir($user_id);
+                    $telegram->sendMenuVideo($user_id, "./samples/12.mp4", $meme_setting_markup_12_encoded);
                     break;
                 case '۱۳- Disaster Girl':
                     $user->flush($user_id);
+                    $memes->empty_files_dir($user_id);
                     $telegram->sendMenuPhoto($user_id, "./samples/13.jpg", $meme_setting_markup_13_encoded);
                     break;
                 case '۱۴- دوست پسر چشم چرون':
                     $user->flush($user_id);
+                    $memes->empty_files_dir($user_id);
                     $telegram->sendMenuPhoto($user_id, "./samples/14.jpg", $meme_setting_markup_14_encoded);
                     break;
                 case '۱۵- کرمیت در حال مشاوره شیطانی':
                     $user->flush($user_id);
+                    $memes->empty_files_dir($user_id);
                     $telegram->sendMenuPhoto($user_id, "./samples/15.jpg", $meme_setting_markup_15_encoded);
                     break;
                 case '۱۶- Drakepost':
                     $user->flush($user_id);
+                    $memes->empty_files_dir($user_id);
                     $telegram->sendMenuPhoto($user_id, "./samples/16.jpg", $meme_setting_markup_16_encoded);
                     break;
                 case '۱۷- خروجی ۱۲':
                     $user->flush($user_id);
+                    $memes->empty_files_dir($user_id);
                     $telegram->sendMenuPhoto($user_id, "./samples/17.jpg", $meme_setting_markup_17_encoded);
                     break;
                 case '۱۸- Facepalm':
                     $user->flush($user_id);
+                    $memes->empty_files_dir($user_id);
                     $telegram->sendMenuPhoto($user_id, "./samples/18.jpg", $meme_setting_markup_18_encoded);
                     break;
                 case '۱۹- هارولد در حال مخفی کردن درد':
                     $user->flush($user_id);
+                    $memes->empty_files_dir($user_id);
                     $telegram->sendMenuPhoto($user_id, "./samples/19.jpg", $meme_setting_markup_19_encoded);
                     break;
                 case '۲۰- اسپایدرمن':
                     $user->flush($user_id);
+                    $memes->empty_files_dir($user_id);
                     $telegram->sendMenuPhoto($user_id, "./samples/20.jpg", $meme_setting_markup_20_encoded);
                     break;
                 case '۲۱- ذکاوت!':
                     $user->flush($user_id);
+                    $memes->empty_files_dir($user_id);
                     $telegram->sendMenuPhoto($user_id, "./samples/21.jpg", $meme_setting_markup_21_encoded);
                     break;
                 case "۲۲- مورینیو: If I speak I'm in big trouble":
                     $user->flush($user_id);
-                    $telegram->sendMenuPhoto($user_id, "./samples/22.mp4", $meme_setting_markup_22_encoded);
+                    $memes->empty_files_dir($user_id);
+                    $telegram->sendMenuVideo($user_id, "./samples/22.mp4", $meme_setting_markup_22_encoded);
                     break;
                 case '۲۳- سگ گریان':
                     $user->flush($user_id);
-                    $telegram->sendMenuPhoto($user_id, "./samples/23.mp4", $meme_setting_markup_23_encoded);
+                    $memes->empty_files_dir($user_id);
+                    $telegram->sendMenuVideo($user_id, "./samples/23.mp4", $meme_setting_markup_23_encoded);
                     break;
                 case '۲۴- دعوای پیشی‌ها':
                     $user->flush($user_id);
-                    $telegram->sendMenuPhoto($user_id, "./samples/24.mp4", $meme_setting_markup_24_encoded);
+                    $memes->empty_files_dir($user_id);
+                    $telegram->sendMenuVideo($user_id, "./samples/24.mp4", $meme_setting_markup_24_encoded);
                     break;
                 case '۲۵- ترامپ: Somebody had to do it, I am the chosen one':
                     $user->flush($user_id);
-                    $telegram->sendMenuPhoto($user_id, "./samples/25.mp4", $meme_setting_markup_25_encoded);
+                    $memes->empty_files_dir($user_id);
+                    $telegram->sendMenuVideo($user_id, "./samples/25.mp4", $meme_setting_markup_25_encoded);
                     break;
                 default:
                     //no need for a text
@@ -373,8 +397,6 @@ foreach($updates as $update) {
                         $output_file = $memes->create('1', $texts, $user_id);
 
                         $telegram->sendVideo($user_id, $output_file);
-
-                        $user->flush($user_id);
                 } else {
                     $telegram->sendMessage($user_id, "لطفا تمام بخش‌ها را کامل کنید");
                 }
@@ -388,8 +410,6 @@ foreach($updates as $update) {
                     $output_file = $memes->create('2', break_string($results['text_one'], 28), $user_id);
 
                     $telegram->sendVideo($user_id, $output_file);
-
-                    $user->flush($user_id);
                 } else {
                     $telegram->sendMessage($user_id, "لطفا تمام بخش‌ها را کامل کنید");
                 }
@@ -403,8 +423,6 @@ foreach($updates as $update) {
                         $output_file = $memes->create('3', break_string($results['text_one'], 28), $user_id);
                         
                         $telegram->sendVideo($user_id, $output_file);
-                        
-                        $user->flush($user_id);
                 } else {
                     $telegram->sendMessage($user_id, "لطفا تمام بخش‌ها را کامل کنید");
                 }
@@ -418,8 +436,6 @@ foreach($updates as $update) {
                         $output_file = $memes->create('4', break_string($results['text_one'], 28), $user_id);
                         
                         $telegram->sendVideo($user_id, $output_file);
-                        
-                        $user->flush($user_id);
                 } else {
                     $telegram->sendMessage($user_id, "لطفا تمام بخش‌ها را کامل کنید");
                 }
@@ -433,8 +449,6 @@ foreach($updates as $update) {
                         $output_file = $memes->create('5', break_string($results['text_one'], 30), $user_id);
                         
                         $telegram->sendVideo($user_id, $output_file);
-                        
-                        $user->flush($user_id);
                 } else {
                     $telegram->sendMessage($user_id, "لطفا تمام بخش‌ها را کامل کنید");
                 }
@@ -448,8 +462,6 @@ foreach($updates as $update) {
                         $output_file = $memes->create('6', break_string($results['text_one'], 28), $user_id);
                         
                         $telegram->sendVideo($user_id, $output_file);
-                        
-                        $user->flush($user_id);
                 } else {
                     $telegram->sendMessage($user_id, "لطفا تمام بخش‌ها را کامل کنید");
                 }
@@ -463,8 +475,6 @@ foreach($updates as $update) {
                         $output_file = $memes->create('7', break_string($results['text_one'], 30), $user_id);
                         
                         $telegram->sendVideo($user_id, $output_file);
-                        
-                        $user->flush($user_id);
                 } else {
                     $telegram->sendMessage($user_id, "لطفا تمام بخش‌ها را کامل کنید");
                 }
@@ -478,8 +488,6 @@ foreach($updates as $update) {
                         $output_file = $memes->create('8', break_string($results['text_one'], 28), $user_id);
                         
                         $telegram->sendVideo($user_id, $output_file);
-                        
-                        $user->flush($user_id);
                 } else {
                     $telegram->sendMessage($user_id, "لطفا تمام بخش‌ها را کامل کنید");
                 }
@@ -493,8 +501,6 @@ foreach($updates as $update) {
                         $output_file = $memes->create('9', break_string($results['text_one'], 30), $user_id);
                         
                         $telegram->sendVideo($user_id, $output_file);
-                        
-                        $user->flush($user_id);
                 } else {
                     $telegram->sendMessage($user_id, "لطفا تمام بخش‌ها را کامل کنید");
                 }
@@ -508,8 +514,6 @@ foreach($updates as $update) {
                         $output_file = $memes->create('10', break_string($results['text_one'], 28), $user_id);
                         
                         $telegram->sendVideo($user_id, $output_file);
-                        
-                        $user->flush($user_id);
                 } else {
                     $telegram->sendMessage($user_id, "لطفا تمام بخش‌ها را کامل کنید");
                 }
@@ -523,8 +527,6 @@ foreach($updates as $update) {
                         $output_file = $memes->create('11', break_string($results['text_one'], 30), $user_id);
                         
                         $telegram->sendVideo($user_id, $output_file);
-                        
-                        $user->flush($user_id);
                 } else {
                     $telegram->sendMessage($user_id, "لطفا تمام بخش‌ها را کامل کنید");
                 }
@@ -538,8 +540,6 @@ foreach($updates as $update) {
                         $output_file = $memes->create('12', break_string($results['text_one'], 28), $user_id);
                         
                         $telegram->sendVideo($user_id, $output_file);
-                        
-                        $user->flush($user_id);
                 } else {
                     $telegram->sendMessage($user_id, "لطفا تمام بخش‌ها را کامل کنید");
                 }
@@ -548,11 +548,9 @@ foreach($updates as $update) {
             case 'create_13':
                 $results = $user->read("telegram_user_id", $user_id);
                 if ($results['text_one'] != null) {
-                        $output_file = $memes->create('13', $user_id, break_string($results['text_one'], 40));
+                        $output_file = $memes->create('13', break_string($results['text_one'], 40), $user_id);
 
                         $telegram->sendPhoto($user_id, $output_file);
-
-                        $user->flush($user_id);
                 } else {
                     $telegram->sendMessage($user_id, "لطفا تمام بخش‌ها را کامل کنید");
                 }
@@ -561,11 +559,11 @@ foreach($updates as $update) {
             case 'create_14':
                 $results = $user->read("telegram_user_id", $user_id);
                 if ($results['text_one'] != null && $results['text_two'] != null && $results['text_three'] != null) {
-                        $output_file = $memes->create('14', $user_id, [break_string($results['text_one'], 8),
-                            break_string($results['text_two'], 8), break_string($results['text_three'], 8)]);
+                        $output_file = $memes->create('14', [break_string($results['text_one'], 8),
+                                break_string($results['text_two'], 8),
+                                break_string($results['text_three'], 8)], $user_id);
+                        
                         $telegram->sendPhoto($user_id, $output_file);
-
-                        $user->flush($user_id);
                 } else {
                     $telegram->sendMessage($user_id, "لطفا تمام بخش‌ها را کامل کنید");
                 }
@@ -575,9 +573,8 @@ foreach($updates as $update) {
                 $results = $user->read("telegram_user_id", $user_id);
                 if ($results['text_one'] != null) {
                     $output_file = $memes->create('15', break_string($results['text_one'], 40), $user_id);
+                    
                     $telegram->sendPhoto($user_id, $output_file);
-
-                    $user->flush($user_id);
                 } else {
                     $telegram->sendMessage($user_id, "لطفا تمام بخش‌ها را کامل کنید");
                 }
@@ -586,12 +583,10 @@ foreach($updates as $update) {
             case 'create_16':
                 $results = $user->read("telegram_user_id", $user_id);
                 if ($results['text_one'] != null && $results['text_two'] != null) {
-                        $output_file = $memes->create('16', $user_id, [break_string($results['text_one'], 22),
-                            break_string($results['text_two'], 22)]);
+                        $output_file = $memes->create('16', [break_string($results['text_one'], 22),
+                            break_string($results['text_two'], 22)], $user_id);
 
                         $telegram->sendPhoto($user_id, $output_file);
-
-                        $user->flush($user_id);
                 } else {
                     $telegram->sendMessage($user_id, "لطفا تمام بخش‌ها را کامل کنید");
                 }
@@ -600,12 +595,11 @@ foreach($updates as $update) {
             case 'create_17':
                 $results = $user->read("telegram_user_id", $user_id);
                 if ($results['text_one'] != null && $results['text_two'] != null && $results['text_three'] != null) {
-                        $output_file = $memes->create('17', $user_id, [break_string($results['text_one'], 8),
-                                    break_string($results['text_two'], 10), break_string($results['text_three'], 11)]);
+                        $output_file = $memes->create('17', [break_string($results['text_one'], 8),
+                                    break_string($results['text_two'], 10),
+                                    break_string($results['text_three'], 11)], $user_id);
                         
                         $telegram->sendPhoto($user_id, $output_file);
-
-                        $user->flush($user_id);
                 } else {
                     $telegram->sendMessage($user_id, "لطفا تمام بخش‌ها را کامل کنید");
                 }
@@ -614,11 +608,10 @@ foreach($updates as $update) {
             case 'create_18':
                 $results = $user->read("telegram_user_id", $user_id);
                 if ($results['text_one'] != null) {
-                        $output_file = $memes->create('18', $user_id, break_string($results['text_one'], 40));
+                        $output_file = $memes->create('18', break_string($results['text_one'],
+                            40), $user_id);
                         
                         $telegram->sendPhoto($user_id, $output_file);
-
-                        $user->flush($user_id);
                 } else {
                     $telegram->sendMessage($user_id, "لطفا تمام بخش‌ها را کامل کنید");
                 }
@@ -627,11 +620,10 @@ foreach($updates as $update) {
             case 'create_19':
                 $results = $user->read("telegram_user_id", $user_id);
                 if ($results['text_one'] != null && $results['text_two'] != null) {
-                    $output_file = $memes->create('19', $user_id, break_string($results['text_one'], 25));
+                    $output_file = $memes->create('19', [break_string($results['text_one'],
+                            25), break_string($results['text_two'], 25)], $user_id);
 
                     $telegram->sendPhoto($user_id, $output_file);
-
-                    $user->flush($user_id);
                 } else {
                     $telegram->sendMessage($user_id, "لطفا تمام بخش‌ها را کامل کنید");
                 }
@@ -640,11 +632,10 @@ foreach($updates as $update) {
             case 'create_20':
                 $results = $user->read("telegram_user_id", $user_id);
                 if ($results['text_one'] != null) {
-                    $output_file = $memes->create('20', $user_id, break_string($results['text_one'], 40));
+                    $output_file = $memes->create('20', break_string($results['text_one'],
+                            40), $user_id);
                     
                     $telegram->sendPhoto($user_id, $output_file);
-
-                    $user->flush($user_id);
                 } else {
                     $telegram->sendMessage($user_id, "لطفا تمام بخش‌ها را کامل کنید");
                 }
@@ -654,11 +645,10 @@ foreach($updates as $update) {
                 $results = $user->read("telegram_user_id", $user_id);
                 if ($results['text_one'] != null) {
                     
-                    $output_file = $memes->create('21', $user_id, break_string($results['text_one'], 40));
+                    $output_file = $memes->create('21', break_string($results['text_one'],
+                            40), $user_id);
                     
                     $telegram->sendPhoto($user_id, $output_file);
-
-                    $user->flush($user_id);
                 } else {
                     $telegram->sendMessage($user_id, "لطفا تمام بخش‌ها را کامل کنید");
                 }
@@ -670,11 +660,10 @@ foreach($updates as $update) {
                     
                     $memes->create_input_video($user_id, $results['background'], "memes/22-if-i-speak-im-in-big-trouble/22-if-i-speak-im-in-big-trouble.mov");
                     
-                    $output_file = $memes->create('22', $user_id, break_string($results['text_one'], 30));
+                    $output_file = $memes->create('22', break_string($results['text_one'],
+                            30), $user_id);
                     
-                    $telegram->sendPhoto($user_id, $output_file);
-
-                    $user->flush($user_id);
+                    $telegram->sendVideo($user_id, $output_file);
                 } else {
                     $telegram->sendMessage($user_id, "لطفا تمام بخش‌ها را کامل کنید");
                 }
@@ -686,11 +675,10 @@ foreach($updates as $update) {
                     
                     $memes->create_input_video($user_id, $results['background'], "memes/23-crying-dog/crying-dog.mov");
                     
-                    $output_file = $memes->create('23', $user_id, break_string($results['text_one'], 30));
+                    $output_file = $memes->create('23', break_string($results['text_one'],
+                            30), $user_id);
 
-                    $telegram->sendPhoto($user_id, $output_file);
-
-                    $user->flush($user_id);
+                    $telegram->sendVideo($user_id, $output_file);
                 } else {
                     $telegram->sendMessage($user_id, "لطفا تمام بخش‌ها را کامل کنید");
                 }
@@ -702,11 +690,10 @@ foreach($updates as $update) {
                     
                     $memes->create_input_video($user_id, $results['background'], "memes/24-cat-hitting-another-cat/cat-fight.mov");
 
-                    $output_file = $memes->create('24', $user_id, break_string($results['text_one'], 30));
+                    $output_file = $memes->create('24', break_string($results['text_one'],
+                            30), $user_id);
 
-                    $telegram->sendPhoto($user_id, $output_file);
-
-                    $user->flush($user_id);
+                    $telegram->sendVideo($user_id, $output_file);
                 } else {
                     $telegram->sendMessage($user_id, "لطفا تمام بخش‌ها را کامل کنید");
                 }
@@ -718,11 +705,10 @@ foreach($updates as $update) {
                     
                     $memes->create_input_video($user_id, $results['background'], "memes/25-somebody-had-to-do-it/trump.mov");
                     
-                    $output_file = $memes->create('25', $user_id, break_string($results['text_one'], 30));
+                    $output_file = $memes->create('25', break_string($results['text_one'],
+                            30), $user_id);
 
-                    $telegram->sendPhoto($user_id, $output_file);
-
-                    $user->flush($user_id);
+                    $telegram->sendVideo($user_id, $output_file);
                 } else {
                     $telegram->sendMessage($user_id, "لطفا تمام بخش‌ها را کامل کنید");
                 }
@@ -812,17 +798,32 @@ foreach($updates as $update) {
                 # code...
                 break;
         }
+        
+        if(substr($update->callback_query->data, 0, 6) == 'create') {
+            $user->flush($user_id);
+            if(isset($output_file) && file_exists($output_file)) {
+                unlink($output_file);
+            }
+            if(file_exists("files/$user_id/input.mp4")) {
+                unlink("files/$user_id/input.mp4");
+            }
+        }
     } elseif(isset($update->message->video)) {
         //on video sent
         if ($update->message->video->file_size > 5000000) {
             $telegram->sendMessage($user_id, "لطفا کلیپی با حجم کمتر از ۵ مگابایت ارسال کنید");
         } else {
             echo "Video sent\n";
-            $file_id = $update->message->video->file_id;
-            
-            $result = $telegram->getFile($file_id);
 
+            $background = $user->read("telegram_user_id", $user_id)['background'];
+            if(file_exists($background)) {
+                unlink($background);
+            }
+
+            $file_id = $update->message->video->file_id;
+            $result = $telegram->getFile($file_id);
             $file_path = json_decode($result)->result->file_path;
+
             if($telegram->download($user_id, $file_path) == False) {
                 $telegram->sendMessage($user_id, "تنظیم ویدیوی پس‌زمینه موفقیت آمیز نبود، دوباره امتحان کنید");
             } else {
@@ -836,6 +837,12 @@ foreach($updates as $update) {
             $telegram->sendMessage($user_id, "لطفا عکسی با حجم کمتر از ۵ مگابایت ارسال کنید");
         } else {
             echo "Photo sent\n";
+
+            $background = $user->read("telegram_user_id", $user_id)['background'] ?? false;
+            if($background && file_exists($background)) {
+                unlink($background);
+            }
+
             $file_id = end($update->message->photo)->file_id;
             $result = $telegram->getFile($file_id);
             $file_path = json_decode($result)->result->file_path;
