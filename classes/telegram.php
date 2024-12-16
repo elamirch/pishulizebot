@@ -33,58 +33,37 @@ class Telegram {
         return curl($url,$data);
     }
 
-    public function sendVideo($user_id, $videoPath) {
+    public function sendVideo($user_id, $videoPath, $caption, $reply_markup = null) {
         global $BOT_TOKEN;
 
         $data = array(
             'chat_id' => "$user_id",
             'video' => new \CURLFile($videoPath),
-            'caption' => "ویدیوی شما با موفقیت ساخته شد: @pishulizebot",
+            'caption' => $caption,
         );
+
+        if($reply_markup !=null) {
+            $data['reply_markup'] = urldecode($reply_markup);
+        }
 
         $url = "https://api.telegram.org/bot$BOT_TOKEN/sendVideo";
         curl($url, $data);
     }
 
-    public function sendPhoto($user_id, $photoPath) {
+    public function sendPhoto($user_id, $photoPath, $caption, $reply_markup = null) {
         global $BOT_TOKEN;
         $data = array(
             'chat_id' => "$user_id",
             'photo' => new \CURLFile($photoPath),
-            'caption' => "میم شما با موفقیت ساخته شد: @pishulizebot",
+            'caption' => $caption,
         );
+
+        if($reply_markup !=null) {
+            $data['reply_markup'] = urldecode($reply_markup);
+        }
 
         $url = "https://api.telegram.org/bot$BOT_TOKEN/sendPhoto";
         curl($url, $data);
-    }
-
-    //To be later merged with sendPhoto
-    public function sendMenuPhoto($user_id, $photoPath, $reply_markup) {
-        global $BOT_TOKEN;
-        
-        $data = array(
-            'chat_id' => "$user_id",
-            'photo' => new \CURLFile($photoPath),
-            'caption' => "انتخاب کنید",
-            'reply_markup' => urldecode($reply_markup),
-        );
-
-        $url = "https://api.telegram.org/bot$BOT_TOKEN/sendPhoto";
-        return curl($url, $data);
-    }
-
-    public function sendMenuVideo($user_id, $videoPath, $reply_markup) {
-        global $BOT_TOKEN;
-        
-        $data = array(
-            'chat_id' => "$user_id",
-            'video' => new \CURLFile($videoPath),
-            'caption' => "انتخاب کنید",
-            'reply_markup' => urldecode($reply_markup),
-        );
-
-        $url = "https://api.telegram.org/bot$BOT_TOKEN/sendVideo";
-        return curl($url, $data);
     }
 
     public function getFile($file_id) {
