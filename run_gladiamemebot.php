@@ -433,7 +433,7 @@ foreach($updates as $update) {
 
                         $telegram->sendVideo($user_id, $output_file, $MEME_CREATED_MESSAGE);
                 } else {
-                    $telegram->sendMessage($user_id, "Please fill all the necessary fields...");
+                    $telegram->sendMessage($user_id, "Creating meme failed ❗️\nPlease fill all the necessary fields again and click on \"Create meme\" button");
                 }
                 break;
             
@@ -446,7 +446,7 @@ foreach($updates as $update) {
 
                     $telegram->sendVideo($user_id, $output_file, $MEME_CREATED_MESSAGE);
                 } else {
-                    $telegram->sendMessage($user_id, "Please fill all the necessary fields...");
+                    $telegram->sendMessage($user_id, "Creating meme failed ❗️\nPlease fill all the necessary fields again and click on \"Create meme\" button");
                 }
                 break;
 
@@ -459,7 +459,7 @@ foreach($updates as $update) {
                         
                         $telegram->sendVideo($user_id, $output_file, $MEME_CREATED_MESSAGE);
                 } else {
-                    $telegram->sendMessage($user_id, "Please fill all the necessary fields...");
+                    $telegram->sendMessage($user_id, "Creating meme failed ❗️\nPlease fill all the necessary fields again and click on \"Create meme\" button");
                 }
                 break;
             
@@ -472,7 +472,7 @@ foreach($updates as $update) {
                         
                         $telegram->sendVideo($user_id, $output_file, $MEME_CREATED_MESSAGE);
                 } else {
-                    $telegram->sendMessage($user_id, "Please fill all the necessary fields...");
+                    $telegram->sendMessage($user_id, "Creating meme failed ❗️\nPlease fill all the necessary fields again and click on \"Create meme\" button");
                 }
                 break;
             
@@ -485,7 +485,7 @@ foreach($updates as $update) {
                         
                         $telegram->sendVideo($user_id, $output_file, $MEME_CREATED_MESSAGE);
                 } else {
-                    $telegram->sendMessage($user_id, "Please fill all the necessary fields...");
+                    $telegram->sendMessage($user_id, "Creating meme failed ❗️\nPlease fill all the necessary fields again and click on \"Create meme\" button");
                 }
                 break;
 
@@ -498,7 +498,7 @@ foreach($updates as $update) {
                         
                         $telegram->sendVideo($user_id, $output_file, $MEME_CREATED_MESSAGE);
                 } else {
-                    $telegram->sendMessage($user_id, "Please fill all the necessary fields...");
+                    $telegram->sendMessage($user_id, "Creating meme failed ❗️\nPlease fill all the necessary fields again and click on \"Create meme\" button");
                 }
                 break;
             
@@ -511,7 +511,7 @@ foreach($updates as $update) {
                         
                         $telegram->sendVideo($user_id, $output_file, $MEME_CREATED_MESSAGE);
                 } else {
-                    $telegram->sendMessage($user_id, "Please fill all the necessary fields...");
+                    $telegram->sendMessage($user_id, "Creating meme failed ❗️\nPlease fill all the necessary fields again and click on \"Create meme\" button");
                 }
                 break;
             
@@ -524,7 +524,7 @@ foreach($updates as $update) {
                         
                         $telegram->sendVideo($user_id, $output_file, $MEME_CREATED_MESSAGE);
                 } else {
-                    $telegram->sendMessage($user_id, "Please fill all the necessary fields...");
+                    $telegram->sendMessage($user_id, "Creating meme failed ❗️\nPlease fill all the necessary fields again and click on \"Create meme\" button");
                 }
                 break;
 
@@ -537,7 +537,7 @@ foreach($updates as $update) {
                         
                         $telegram->sendVideo($user_id, $output_file, $MEME_CREATED_MESSAGE);
                 } else {
-                    $telegram->sendMessage($user_id, "Please fill all the necessary fields...");
+                    $telegram->sendMessage($user_id, "Creating meme failed ❗️\nPlease fill all the necessary fields again and click on \"Create meme\" button");
                 }
                 break;
             
@@ -550,7 +550,7 @@ foreach($updates as $update) {
                         
                         $telegram->sendVideo($user_id, $output_file, $MEME_CREATED_MESSAGE);
                 } else {
-                    $telegram->sendMessage($user_id, "Please fill all the necessary fields...");
+                    $telegram->sendMessage($user_id, "Creating meme failed ❗️\nPlease fill all the necessary fields again and click on \"Create meme\" button");
                 }
                 break;
             
@@ -563,7 +563,7 @@ foreach($updates as $update) {
                         
                         $telegram->sendVideo($user_id, $output_file, $MEME_CREATED_MESSAGE);
                 } else {
-                    $telegram->sendMessage($user_id, "Please fill all the necessary fields...");
+                    $telegram->sendMessage($user_id, "Creating meme failed ❗️\nPlease fill all the necessary fields again and click on \"Create meme\" button");
                 }
                 break;
 
@@ -576,7 +576,7 @@ foreach($updates as $update) {
                         
                         $telegram->sendVideo($user_id, $output_file, $MEME_CREATED_MESSAGE);
                 } else {
-                    $telegram->sendMessage($user_id, "Please fill all the necessary fields...");
+                    $telegram->sendMessage($user_id, "Creating meme failed ❗️\nPlease fill all the necessary fields again and click on \"Create meme\" button");
                 }
                 break;
             
@@ -587,7 +587,7 @@ foreach($updates as $update) {
 
                         $telegram->sendPhoto($user_id, $output_file, $MEME_CREATED_MESSAGE);
                 } else {
-                    $telegram->sendMessage($user_id, "Please fill all the necessary fields...");
+                    $telegram->sendMessage($user_id, "Creating meme failed ❗️\nPlease fill all the necessary fields again and click on \"Create meme\" button");
                 }
                 break;
             
@@ -600,7 +600,7 @@ foreach($updates as $update) {
                         
                         $telegram->sendPhoto($user_id, $output_file, $MEME_CREATED_MESSAGE);
                 } else {
-                    $telegram->sendMessage($user_id, "Please fill all the necessary fields...");
+                    $telegram->sendMessage($user_id, "Creating meme failed ❗️\nPlease fill all the necessary fields again and click on \"Create meme\" button");
                 }
                 break;
 
@@ -611,7 +611,7 @@ foreach($updates as $update) {
                     
                     $telegram->sendPhoto($user_id, $output_file, $MEME_CREATED_MESSAGE);
                 } else {
-                    $telegram->sendMessage($user_id, "Please fill all the necessary fields...");
+                    $telegram->sendMessage($user_id, "Creating meme failed ❗️\nPlease fill all the necessary fields again and click on \"Create meme\" button");
                 }
                 break;
 
@@ -623,7 +623,7 @@ foreach($updates as $update) {
 
                         $telegram->sendPhoto($user_id, $output_file, $MEME_CREATED_MESSAGE);
                 } else {
-                    $telegram->sendMessage($user_id, "Please fill all the necessary fields...");
+                    $telegram->sendMessage($user_id, "Creating meme failed ❗️\nPlease fill all the necessary fields again and click on \"Create meme\" button");
                 }
                 break;
             
@@ -636,7 +636,7 @@ foreach($updates as $update) {
                         
                         $telegram->sendPhoto($user_id, $output_file, $MEME_CREATED_MESSAGE);
                 } else {
-                    $telegram->sendMessage($user_id, "Please fill all the necessary fields...");
+                    $telegram->sendMessage($user_id, "Creating meme failed ❗️\nPlease fill all the necessary fields again and click on \"Create meme\" button");
                 }
                 break;
             
@@ -648,7 +648,7 @@ foreach($updates as $update) {
                         
                         $telegram->sendPhoto($user_id, $output_file, $MEME_CREATED_MESSAGE);
                 } else {
-                    $telegram->sendMessage($user_id, "Please fill all the necessary fields...");
+                    $telegram->sendMessage($user_id, "Creating meme failed ❗️\nPlease fill all the necessary fields again and click on \"Create meme\" button");
                 }
                 break;
 
@@ -660,7 +660,7 @@ foreach($updates as $update) {
 
                     $telegram->sendPhoto($user_id, $output_file, $MEME_CREATED_MESSAGE);
                 } else {
-                    $telegram->sendMessage($user_id, "Please fill all the necessary fields...");
+                    $telegram->sendMessage($user_id, "Creating meme failed ❗️\nPlease fill all the necessary fields again and click on \"Create meme\" button");
                 }
                 break;
             
@@ -672,7 +672,7 @@ foreach($updates as $update) {
                     
                     $telegram->sendPhoto($user_id, $output_file, $MEME_CREATED_MESSAGE);
                 } else {
-                    $telegram->sendMessage($user_id, "Please fill all the necessary fields...");
+                    $telegram->sendMessage($user_id, "Creating meme failed ❗️\nPlease fill all the necessary fields again and click on \"Create meme\" button");
                 }
                 break;
             
@@ -685,7 +685,7 @@ foreach($updates as $update) {
                     
                     $telegram->sendPhoto($user_id, $output_file, $MEME_CREATED_MESSAGE);
                 } else {
-                    $telegram->sendMessage($user_id, "Please fill all the necessary fields...");
+                    $telegram->sendMessage($user_id, "Creating meme failed ❗️\nPlease fill all the necessary fields again and click on \"Create meme\" button");
                 }
                 break;
 
@@ -700,7 +700,7 @@ foreach($updates as $update) {
                     
                     $telegram->sendVideo($user_id, $output_file, $MEME_CREATED_MESSAGE);
                 } else {
-                    $telegram->sendMessage($user_id, "Please fill all the necessary fields...");
+                    $telegram->sendMessage($user_id, "Creating meme failed ❗️\nPlease fill all the necessary fields again and click on \"Create meme\" button");
                 }
                 break;
 
@@ -715,7 +715,7 @@ foreach($updates as $update) {
 
                     $telegram->sendVideo($user_id, $output_file, $MEME_CREATED_MESSAGE);
                 } else {
-                    $telegram->sendMessage($user_id, "Please fill all the necessary fields...");
+                    $telegram->sendMessage($user_id, "Creating meme failed ❗️\nPlease fill all the necessary fields again and click on \"Create meme\" button");
                 }
                 break;
             
@@ -730,7 +730,7 @@ foreach($updates as $update) {
 
                     $telegram->sendVideo($user_id, $output_file, $MEME_CREATED_MESSAGE);
                 } else {
-                    $telegram->sendMessage($user_id, "Please fill all the necessary fields...");
+                    $telegram->sendMessage($user_id, "Creating meme failed ❗️\nPlease fill all the necessary fields again and click on \"Create meme\" button");
                 }
                 break;
             
@@ -745,7 +745,7 @@ foreach($updates as $update) {
 
                     $telegram->sendVideo($user_id, $output_file, $MEME_CREATED_MESSAGE);
                 } else {
-                    $telegram->sendMessage($user_id, "Please fill all the necessary fields...");
+                    $telegram->sendMessage($user_id, "Creating meme failed ❗️\nPlease fill all the necessary fields again and click on \"Create meme\" button");
                 }
                 break;
             
