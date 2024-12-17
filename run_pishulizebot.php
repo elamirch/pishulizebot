@@ -403,7 +403,7 @@ foreach($updates as $update) {
 
                         $telegram->sendVideo($user_id, $output_file, $MEME_CREATED_MESSAGE);
                 } else {
-                    $telegram->sendMessage($user_id, "ساخت میم شکست خورد ❗️\nلطفا تمام بخش‌ها را دوباره کامل کنید و سپس روی «ساخت میم»کلیک کنید");
+                    $telegram->sendMessage($user_id, "ساخت میم شکست خورد❗️\nلطفا تمام بخش‌ها را دوباره کامل کنید و سپس روی «ساخت میم» کلیک کنید");
                 }
                 break;
             
@@ -416,7 +416,7 @@ foreach($updates as $update) {
 
                     $telegram->sendVideo($user_id, $output_file, $MEME_CREATED_MESSAGE);
                 } else {
-                    $telegram->sendMessage($user_id, "ساخت میم شکست خورد ❗️\nلطفا تمام بخش‌ها را دوباره کامل کنید و سپس روی «ساخت میم»کلیک کنید");
+                    $telegram->sendMessage($user_id, "ساخت میم شکست خورد❗️\nلطفا تمام بخش‌ها را دوباره کامل کنید و سپس روی «ساخت میم» کلیک کنید");
                 }
                 break;
 
@@ -429,7 +429,7 @@ foreach($updates as $update) {
                         
                         $telegram->sendVideo($user_id, $output_file, $MEME_CREATED_MESSAGE);
                 } else {
-                    $telegram->sendMessage($user_id, "ساخت میم شکست خورد ❗️\nلطفا تمام بخش‌ها را دوباره کامل کنید و سپس روی «ساخت میم»کلیک کنید");
+                    $telegram->sendMessage($user_id, "ساخت میم شکست خورد❗️\nلطفا تمام بخش‌ها را دوباره کامل کنید و سپس روی «ساخت میم» کلیک کنید");
                 }
                 break;
             
@@ -442,7 +442,7 @@ foreach($updates as $update) {
                         
                         $telegram->sendVideo($user_id, $output_file, $MEME_CREATED_MESSAGE);
                 } else {
-                    $telegram->sendMessage($user_id, "ساخت میم شکست خورد ❗️\nلطفا تمام بخش‌ها را دوباره کامل کنید و سپس روی «ساخت میم»کلیک کنید");
+                    $telegram->sendMessage($user_id, "ساخت میم شکست خورد❗️\nلطفا تمام بخش‌ها را دوباره کامل کنید و سپس روی «ساخت میم» کلیک کنید");
                 }
                 break;
             
@@ -455,7 +455,7 @@ foreach($updates as $update) {
                         
                         $telegram->sendVideo($user_id, $output_file, $MEME_CREATED_MESSAGE);
                 } else {
-                    $telegram->sendMessage($user_id, "ساخت میم شکست خورد ❗️\nلطفا تمام بخش‌ها را دوباره کامل کنید و سپس روی «ساخت میم»کلیک کنید");
+                    $telegram->sendMessage($user_id, "ساخت میم شکست خورد❗️\nلطفا تمام بخش‌ها را دوباره کامل کنید و سپس روی «ساخت میم» کلیک کنید");
                 }
                 break;
 
@@ -468,7 +468,7 @@ foreach($updates as $update) {
                         
                         $telegram->sendVideo($user_id, $output_file, $MEME_CREATED_MESSAGE);
                 } else {
-                    $telegram->sendMessage($user_id, "ساخت میم شکست خورد ❗️\nلطفا تمام بخش‌ها را دوباره کامل کنید و سپس روی «ساخت میم»کلیک کنید");
+                    $telegram->sendMessage($user_id, "ساخت میم شکست خورد❗️\nلطفا تمام بخش‌ها را دوباره کامل کنید و سپس روی «ساخت میم» کلیک کنید");
                 }
                 break;
             
@@ -481,7 +481,7 @@ foreach($updates as $update) {
                         
                         $telegram->sendVideo($user_id, $output_file, $MEME_CREATED_MESSAGE);
                 } else {
-                    $telegram->sendMessage($user_id, "ساخت میم شکست خورد ❗️\nلطفا تمام بخش‌ها را دوباره کامل کنید و سپس روی «ساخت میم»کلیک کنید");
+                    $telegram->sendMessage($user_id, "ساخت میم شکست خورد❗️\nلطفا تمام بخش‌ها را دوباره کامل کنید و سپس روی «ساخت میم» کلیک کنید");
                 }
                 break;
             
@@ -494,7 +494,7 @@ foreach($updates as $update) {
                         
                         $telegram->sendVideo($user_id, $output_file, $MEME_CREATED_MESSAGE);
                 } else {
-                    $telegram->sendMessage($user_id, "ساخت میم شکست خورد ❗️\nلطفا تمام بخش‌ها را دوباره کامل کنید و سپس روی «ساخت میم»کلیک کنید");
+                    $telegram->sendMessage($user_id, "ساخت میم شکست خورد❗️\nلطفا تمام بخش‌ها را دوباره کامل کنید و سپس روی «ساخت میم» کلیک کنید");
                 }
                 break;
 
@@ -507,7 +507,7 @@ foreach($updates as $update) {
                         
                         $telegram->sendVideo($user_id, $output_file, $MEME_CREATED_MESSAGE);
                 } else {
-                    $telegram->sendMessage($user_id, "ساخت میم شکست خورد ❗️\nلطفا تمام بخش‌ها را دوباره کامل کنید و سپس روی «ساخت میم»کلیک کنید");
+                    $telegram->sendMessage($user_id, "ساخت میم شکست خورد❗️\nلطفا تمام بخش‌ها را دوباره کامل کنید و سپس روی «ساخت میم» کلیک کنید");
                 }
                 break;
             
@@ -520,7 +520,7 @@ foreach($updates as $update) {
                         
                         $telegram->sendVideo($user_id, $output_file, $MEME_CREATED_MESSAGE);
                 } else {
-                    $telegram->sendMessage($user_id, "ساخت میم شکست خورد ❗️\nلطفا تمام بخش‌ها را دوباره کامل کنید و سپس روی «ساخت میم»کلیک کنید");
+                    $telegram->sendMessage($user_id, "ساخت میم شکست خورد❗️\nلطفا تمام بخش‌ها را دوباره کامل کنید و سپس روی «ساخت میم» کلیک کنید");
                 }
                 break;
             
@@ -533,7 +533,7 @@ foreach($updates as $update) {
                         
                         $telegram->sendVideo($user_id, $output_file, $MEME_CREATED_MESSAGE);
                 } else {
-                    $telegram->sendMessage($user_id, "ساخت میم شکست خورد ❗️\nلطفا تمام بخش‌ها را دوباره کامل کنید و سپس روی «ساخت میم»کلیک کنید");
+                    $telegram->sendMessage($user_id, "ساخت میم شکست خورد❗️\nلطفا تمام بخش‌ها را دوباره کامل کنید و سپس روی «ساخت میم» کلیک کنید");
                 }
                 break;
 
@@ -546,7 +546,7 @@ foreach($updates as $update) {
                         
                         $telegram->sendVideo($user_id, $output_file, $MEME_CREATED_MESSAGE);
                 } else {
-                    $telegram->sendMessage($user_id, "ساخت میم شکست خورد ❗️\nلطفا تمام بخش‌ها را دوباره کامل کنید و سپس روی «ساخت میم»کلیک کنید");
+                    $telegram->sendMessage($user_id, "ساخت میم شکست خورد❗️\nلطفا تمام بخش‌ها را دوباره کامل کنید و سپس روی «ساخت میم» کلیک کنید");
                 }
                 break;
             
@@ -557,7 +557,7 @@ foreach($updates as $update) {
 
                         $telegram->sendPhoto($user_id, $output_file, $MEME_CREATED_MESSAGE);
                 } else {
-                    $telegram->sendMessage($user_id, "ساخت میم شکست خورد ❗️\nلطفا تمام بخش‌ها را دوباره کامل کنید و سپس روی «ساخت میم»کلیک کنید");
+                    $telegram->sendMessage($user_id, "ساخت میم شکست خورد❗️\nلطفا تمام بخش‌ها را دوباره کامل کنید و سپس روی «ساخت میم» کلیک کنید");
                 }
                 break;
             
@@ -570,7 +570,7 @@ foreach($updates as $update) {
                         
                         $telegram->sendPhoto($user_id, $output_file, $MEME_CREATED_MESSAGE);
                 } else {
-                    $telegram->sendMessage($user_id, "ساخت میم شکست خورد ❗️\nلطفا تمام بخش‌ها را دوباره کامل کنید و سپس روی «ساخت میم»کلیک کنید");
+                    $telegram->sendMessage($user_id, "ساخت میم شکست خورد❗️\nلطفا تمام بخش‌ها را دوباره کامل کنید و سپس روی «ساخت میم» کلیک کنید");
                 }
                 break;
 
@@ -581,7 +581,7 @@ foreach($updates as $update) {
                     
                     $telegram->sendPhoto($user_id, $output_file, $MEME_CREATED_MESSAGE);
                 } else {
-                    $telegram->sendMessage($user_id, "ساخت میم شکست خورد ❗️\nلطفا تمام بخش‌ها را دوباره کامل کنید و سپس روی «ساخت میم»کلیک کنید");
+                    $telegram->sendMessage($user_id, "ساخت میم شکست خورد❗️\nلطفا تمام بخش‌ها را دوباره کامل کنید و سپس روی «ساخت میم» کلیک کنید");
                 }
                 break;
 
@@ -593,7 +593,7 @@ foreach($updates as $update) {
 
                         $telegram->sendPhoto($user_id, $output_file, $MEME_CREATED_MESSAGE);
                 } else {
-                    $telegram->sendMessage($user_id, "ساخت میم شکست خورد ❗️\nلطفا تمام بخش‌ها را دوباره کامل کنید و سپس روی «ساخت میم»کلیک کنید");
+                    $telegram->sendMessage($user_id, "ساخت میم شکست خورد❗️\nلطفا تمام بخش‌ها را دوباره کامل کنید و سپس روی «ساخت میم» کلیک کنید");
                 }
                 break;
             
@@ -606,7 +606,7 @@ foreach($updates as $update) {
                         
                         $telegram->sendPhoto($user_id, $output_file, $MEME_CREATED_MESSAGE);
                 } else {
-                    $telegram->sendMessage($user_id, "ساخت میم شکست خورد ❗️\nلطفا تمام بخش‌ها را دوباره کامل کنید و سپس روی «ساخت میم»کلیک کنید");
+                    $telegram->sendMessage($user_id, "ساخت میم شکست خورد❗️\nلطفا تمام بخش‌ها را دوباره کامل کنید و سپس روی «ساخت میم» کلیک کنید");
                 }
                 break;
             
@@ -618,7 +618,7 @@ foreach($updates as $update) {
                         
                         $telegram->sendPhoto($user_id, $output_file, $MEME_CREATED_MESSAGE);
                 } else {
-                    $telegram->sendMessage($user_id, "ساخت میم شکست خورد ❗️\nلطفا تمام بخش‌ها را دوباره کامل کنید و سپس روی «ساخت میم»کلیک کنید");
+                    $telegram->sendMessage($user_id, "ساخت میم شکست خورد❗️\nلطفا تمام بخش‌ها را دوباره کامل کنید و سپس روی «ساخت میم» کلیک کنید");
                 }
                 break;
 
@@ -630,7 +630,7 @@ foreach($updates as $update) {
 
                     $telegram->sendPhoto($user_id, $output_file, $MEME_CREATED_MESSAGE);
                 } else {
-                    $telegram->sendMessage($user_id, "ساخت میم شکست خورد ❗️\nلطفا تمام بخش‌ها را دوباره کامل کنید و سپس روی «ساخت میم»کلیک کنید");
+                    $telegram->sendMessage($user_id, "ساخت میم شکست خورد❗️\nلطفا تمام بخش‌ها را دوباره کامل کنید و سپس روی «ساخت میم» کلیک کنید");
                 }
                 break;
             
@@ -642,7 +642,7 @@ foreach($updates as $update) {
                     
                     $telegram->sendPhoto($user_id, $output_file, $MEME_CREATED_MESSAGE);
                 } else {
-                    $telegram->sendMessage($user_id, "ساخت میم شکست خورد ❗️\nلطفا تمام بخش‌ها را دوباره کامل کنید و سپس روی «ساخت میم»کلیک کنید");
+                    $telegram->sendMessage($user_id, "ساخت میم شکست خورد❗️\nلطفا تمام بخش‌ها را دوباره کامل کنید و سپس روی «ساخت میم» کلیک کنید");
                 }
                 break;
             
@@ -655,7 +655,7 @@ foreach($updates as $update) {
                     
                     $telegram->sendPhoto($user_id, $output_file, $MEME_CREATED_MESSAGE);
                 } else {
-                    $telegram->sendMessage($user_id, "ساخت میم شکست خورد ❗️\nلطفا تمام بخش‌ها را دوباره کامل کنید و سپس روی «ساخت میم»کلیک کنید");
+                    $telegram->sendMessage($user_id, "ساخت میم شکست خورد❗️\nلطفا تمام بخش‌ها را دوباره کامل کنید و سپس روی «ساخت میم» کلیک کنید");
                 }
                 break;
 
@@ -670,7 +670,7 @@ foreach($updates as $update) {
                     
                     $telegram->sendVideo($user_id, $output_file, $MEME_CREATED_MESSAGE);
                 } else {
-                    $telegram->sendMessage($user_id, "ساخت میم شکست خورد ❗️\nلطفا تمام بخش‌ها را دوباره کامل کنید و سپس روی «ساخت میم»کلیک کنید");
+                    $telegram->sendMessage($user_id, "ساخت میم شکست خورد❗️\nلطفا تمام بخش‌ها را دوباره کامل کنید و سپس روی «ساخت میم» کلیک کنید");
                 }
                 break;
 
@@ -685,7 +685,7 @@ foreach($updates as $update) {
 
                     $telegram->sendVideo($user_id, $output_file, $MEME_CREATED_MESSAGE);
                 } else {
-                    $telegram->sendMessage($user_id, "ساخت میم شکست خورد ❗️\nلطفا تمام بخش‌ها را دوباره کامل کنید و سپس روی «ساخت میم»کلیک کنید");
+                    $telegram->sendMessage($user_id, "ساخت میم شکست خورد❗️\nلطفا تمام بخش‌ها را دوباره کامل کنید و سپس روی «ساخت میم» کلیک کنید");
                 }
                 break;
             
@@ -700,7 +700,7 @@ foreach($updates as $update) {
 
                     $telegram->sendVideo($user_id, $output_file, $MEME_CREATED_MESSAGE);
                 } else {
-                    $telegram->sendMessage($user_id, "ساخت میم شکست خورد ❗️\nلطفا تمام بخش‌ها را دوباره کامل کنید و سپس روی «ساخت میم»کلیک کنید");
+                    $telegram->sendMessage($user_id, "ساخت میم شکست خورد❗️\nلطفا تمام بخش‌ها را دوباره کامل کنید و سپس روی «ساخت میم» کلیک کنید");
                 }
                 break;
             
@@ -715,7 +715,7 @@ foreach($updates as $update) {
 
                     $telegram->sendVideo($user_id, $output_file, $MEME_CREATED_MESSAGE);
                 } else {
-                    $telegram->sendMessage($user_id, "ساخت میم شکست خورد ❗️\nلطفا تمام بخش‌ها را دوباره کامل کنید و سپس روی «ساخت میم»کلیک کنید");
+                    $telegram->sendMessage($user_id, "ساخت میم شکست خورد❗️\nلطفا تمام بخش‌ها را دوباره کامل کنید و سپس روی «ساخت میم» کلیک کنید");
                 }
                 break;
             
