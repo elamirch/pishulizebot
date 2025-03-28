@@ -6,3 +6,4 @@
     " \"Create meme\" button:";
     $MEME_CREATION_FAILURE_ERROR = "Creating meme failed❗️\nPlease fill all the necessary".
     "fields again and click on \"Create meme\" button";
+    $MEME_BEING_CREATED_NOTICE = "Your meme is being created, please wait...";

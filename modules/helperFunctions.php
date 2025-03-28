@@ -22,7 +22,7 @@ function dm($message) {
 }
 
 function validateOrDmError(array $inputs): bool {
-    global $user_record, $MEME_CREATION_FAILURE_ERROR;
+    global $user_record, $MEME_CREATION_FAILURE_ERROR, $MEME_BEING_CREATED_NOTICE;
 
     logMessage("Validating Array: " . json_encode($inputs));
     foreach ($inputs as $input) {
@@ -33,6 +33,7 @@ function validateOrDmError(array $inputs): bool {
         }
     }
 
+    dm($MEME_BEING_CREATED_NOTICE);
     return true;
 }
 
