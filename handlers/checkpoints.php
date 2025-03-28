@@ -1,7 +1,6 @@
 <?php
 switch ($checkpoint) {
     case 'background':
-        setCheckpoint('background');
         $message = "Send a background photo or video...";
         break;
     
