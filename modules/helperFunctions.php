@@ -1,8 +1,7 @@
 <?php
 
 function setCheckpoint($text) {
-    global $user;
-    global $user_id;
+    global $user, $user_id;
     $user->update('telegram_user_id', $user_id, 'checkpoint', $text);
 }
 
@@ -13,21 +12,21 @@ function logMessage($message) {
 }
 
 function userUpdate($updateColumn, $updateValue) {
-    global $user;
-    global $user_id;
+    global $user, $user_id;
     $user->update('telegram_user_id', $user_id, $updateColumn, $updateValue);
 }
 
 function dm($message) {
-    global $telegram;
-    global $user_id;
+    global $telegram, $user_id;
     $telegram->sendMessage($user_id, $message);
 }
 
 function validateOrDmError(array $inputs): bool {
     global $user_record;
 
+    logMessage("Validating Array: " . json_encode($inputs));
     foreach ($inputs as $input) {
+        logMessage("Validating Input: " . $input);
         if(is_null($user_record[$input])) {
             dm(
                 "Creating meme failed❗️\nPlease fill all the necessary".
