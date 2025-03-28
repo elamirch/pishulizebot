@@ -472,8 +472,10 @@ if(substr($update->callback_query->data, 0, 6) == 'create') {
     $user->flush($user_id);
     if(isset($output_file) && file_exists($output_file)) {
         unlink($output_file);
+        logMessage('Output file unlinked');
     }
     if(file_exists("files/$user_id/input.mp4")) {
         unlink("files/$user_id/input.mp4");
+        logMessage('Input file unlinked');
     }
 }

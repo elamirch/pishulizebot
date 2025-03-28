@@ -1,5 +1,4 @@
 <?php
-
 switch ($checkpoint) {
     case 'background':
         $message = "لطفا تصویر یا ویدیوی مورد نظر خود را ارسال کنید";

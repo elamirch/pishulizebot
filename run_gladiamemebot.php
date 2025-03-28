@@ -25,18 +25,18 @@ if ($user_info->status == "left") {
 
 //If the user sent a text (and not a callback_query)
 elseif(isset($update->message->text)) {
-        $text = $update->message->text;
+    $text = $update->message->text;
 
-        require_once("handlers/menuAndCommands.php");
-        
-        //Retrieve user_record again as it may have been flushed
-        $user_record = $user->read("telegram_user_id", $user_id);
-        $checkpoint = $user_record['checkpoint'] ?? false;
+    require_once("handlers/menuAndCommands.php");
+    
+    //Retrieve user_record again as it may have been flushed
+    $user_record = $user->read("telegram_user_id", $user_id);
+    $checkpoint = $user_record['checkpoint'] ?? false;
 
-        //Set meme texts based on checkpoints
-        if($checkpoint) {
-            require_once("handlers/checkpoints.php");
-        }
+    //Set meme texts based on checkpoints
+    if($checkpoint) {
+        require_once("handlers/checkpoints.php");
+    }
 }
 
 //If the user sent a callback_query
@@ -49,7 +49,7 @@ elseif(isset($update->message->video)) {
     require_once("handlers/video.php");
 }
 
-//If the user sent a video
+//If the user sent a photo
 elseif(isset($update->message->photo)) {
     require_once("handlers/photo.php");
 }

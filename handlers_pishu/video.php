@@ -3,7 +3,7 @@
 if ($update->message->video->file_size > 5000000) {
     dm("لطفا کلیپی با حجم کمتر از ۵ مگابایت ارسال کنید");
 } else {
-    $background = $user_record['background'];
+    $background = $user_record['background'] ?? false;
     if($background && file_exists($background)) {
         unlink($background);
     }
