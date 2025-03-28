@@ -25,14 +25,12 @@ if ($user_info->status == "left") {
 
 //If the user sent a text (and not a callback_query)
 elseif(isset($update->message->text)) {
-        $user_record = $user->read("telegram_user_id", $user_id);
-        $checkpoint = $user_record['checkpoint'] ?? false;
         $text = $update->message->text;
-
 
         require_once("handlers/menuAndCommands.php");
         
         //Set meme texts based on checkpoints
+        $checkpoint = $user_record['checkpoint'] ?? false;
         if($checkpoint) {
             require_once("handlers/checkpoints.php");
         }
