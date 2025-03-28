@@ -16,9 +16,9 @@
                         ':asv' => $updateValue));
         }
 
-        public function read($column, $value) {
+        public function read($whereColumn, $whereValue) {
             global $pdo;
-            return $pdo->query("SELECT * FROM `users` WHERE $column=$value")->fetchAll()[0];
+            return $pdo->query("SELECT * FROM `users` WHERE $whereColumn=$whereValue")->fetchAll()[0];
         }
 
         public function flush($user_id) {
