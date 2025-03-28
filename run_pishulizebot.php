@@ -34,18 +34,18 @@ elseif(isset($update->message->text)) {
 
     //Set meme texts based on checkpoints
     if($checkpoint) {
-        require_once("handlers/checkpoints.php");
+        require_once("handlers_pishu/checkpoints.php");
     }
 }
 
 //If the user sent a callback_query
 elseif(isset($update->callback_query)) {
-    require_once("handlers/checkpoints.php");
+    require_once("handlers_pishu/callbackQuery.php");
 }
 
 //If the user sent a video
 elseif(isset($update->message->video)) {
-    require_once("handlers/video.php");
+    require_once("handlers_pishu/video.php");
 }
 
 //If the user sent a photo
