@@ -17,7 +17,7 @@ if(end($update->message->photo)->file_size > 5000000) {
         dm("Setting background photo failed, try again...");
     } else {
         dm("Background photo set...");
-        setCheckpoint("Background");
+        setCheckpoint("background");
         userUpdate("background", $file_name);
     }
 }

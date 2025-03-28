@@ -78,8 +78,6 @@ class Telegram {
 
     function download($user_id, $file_path){
         global $BOT_TOKEN;
-        global $pdo;
-        global $user;
         global $USE_PROXY;
     
         $url = "https://api.telegram.org/file/bot$BOT_TOKEN/$file_path";
@@ -102,16 +100,17 @@ class Telegram {
         } else {
             $downloaded_file = file_get_contents($url, False);
         }
+        logMessage("Downloading " . $url);
 
         if (file_put_contents("files/" . $user_id . "/" . $file_name,
                 $downloaded_file))
         { 
-            echo "File downloaded successfully\n";
+            logMessage("File downloaded successfully");
             return $file_name;
         } 
         else
         { 
-            echo "File downloading failed.";
+            logMessage("File downloading failed");
             return False;
         } 
     }

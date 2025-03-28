@@ -17,7 +17,7 @@ if ($update->message->video->file_size > 5000000) {
         dm("Setting background video failed, try again...");
     } else {
         dm("Background video set...");
-        setCheckpoint("Background");
+        setCheckpoint("background");
         userUpdate("background", $file_name);
     }
 }
