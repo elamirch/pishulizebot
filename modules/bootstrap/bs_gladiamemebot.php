@@ -1,6 +1,6 @@
 <?php
-    echo "Running\n";
-    
+    ini_set("error_log", "/tmp/gladiameme-errors.log");
+    $logFile = "/tmp/gladiameme-logs.log";    
     //Reading variables from .env file
     $env = parse_ini_file('.env');
     

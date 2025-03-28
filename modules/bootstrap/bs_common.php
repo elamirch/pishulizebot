@@ -1,6 +1,5 @@
 <?php
     ini_set("log_errors", 1);
-    ini_set("error_log", "/tmp/gladiameme-errors.log");
     $USE_PROXY = $env['USE_PROXY'];
     
     $DB_HOST = $env['DB_HOST'];

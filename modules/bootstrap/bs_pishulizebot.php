@@ -1,6 +1,6 @@
 <?php
-    echo "Running\n";
-    
+    ini_set("error_log", "/tmp/pishulize-errors.log");
+    $logFile = "/tmp/pishulize-logs.log";
     //Reading variables from .env file
     $env = parse_ini_file('.env');
 

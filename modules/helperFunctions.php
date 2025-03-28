@@ -6,7 +6,7 @@ function setCheckpoint($checkpoint) {
 }
 
 function logMessage($message) {
-    $logFile = "/tmp/gladiameme-logs.log";
+    global $logFile;
     $formattedMessage = "[" . date("Y-m-d H:i:s") . "] " . print_r($message, true) . "\n";
     file_put_contents($logFile, $formattedMessage, FILE_APPEND);
 }
