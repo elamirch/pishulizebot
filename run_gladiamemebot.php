@@ -6,6 +6,7 @@ require_once("./modules/variables/var_gladiamemebot.php");
 
 $update = json_decode(file_get_contents('php://input'));
 $user_id = $update->message->from->id ?? $update->callback_query->from->id ?? false;
+logMessage('Update from: ' . $user_id);
 
 $user_record = $user->read("telegram_user_id", $user_id);
 

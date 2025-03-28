@@ -7,7 +7,7 @@ function setCheckpoint($text) {
 }
 
 function logMessage($message) {
-    $logFile = "/tmp/nahhuntel-logs.log";
+    $logFile = "/tmp/gladiameme-logs.log";
     $formattedMessage = "[" . date("Y-m-d H:i:s") . "] " . print_r($message, true) . "\n";
     file_put_contents($logFile, $formattedMessage, FILE_APPEND);
 }
