@@ -21,6 +21,7 @@
     include_once("./classes/telegram.php");
     include_once("./classes/user.php");
     include_once("./classes/memes.php");
+    include_once("./modules/helperFunctions.php");
     
     //Create the needed objects
     $user = new User;
@@ -30,3 +31,22 @@
     if(!is_dir("files")){
         mkdir("files");
     }
+
+    //this function breaks strings by the given chunk size so that the 
+//text written to the output video will stay within the video's resolution
+function break_string($string, $chunk_size) {
+    $lines = array();
+    $lines[0] = '';
+    $string = str_replace("'", '`', $string);
+    $words = mb_split(" ", $string);
+    $i = 0;
+    foreach($words as $key=>$word) {
+        if(mb_strlen($lines[$i]) + mb_strlen($word) < $chunk_size) {
+            $lines[$i] = $lines[$i] . $word . " ";
+        } else {
+            $i++;
+            $lines[$i] = $word . ' ';
+        }
+    }
+    return $lines;
+}

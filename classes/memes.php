@@ -7,25 +7,25 @@ class Memes {
             case '2':
                 return $this->create_simple_video_meme($user_id, $texts);
             case '3':
-                return $this->create_simple_video_meme($user_id, $texts  );
+                return $this->create_simple_video_meme($user_id, $texts);
             case '4':
-                return $this->create_simple_video_meme($user_id, $texts  );
+                return $this->create_simple_video_meme($user_id, $texts);
             case '5':
-                return $this->create_simple_video_meme($user_id, $texts  );
+                return $this->create_simple_video_meme($user_id, $texts);
             case '6':
-                return $this->create_simple_video_meme($user_id, $texts  );
+                return $this->create_simple_video_meme($user_id, $texts);
             case '7':
-                return $this->create_simple_video_meme($user_id, $texts  );
+                return $this->create_simple_video_meme($user_id, $texts);
             case '8':
-                return $this->create_simple_video_meme($user_id, $texts  );
+                return $this->create_simple_video_meme($user_id, $texts);
             case '9':
-                return $this->create_simple_video_meme($user_id, $texts  );
+                return $this->create_simple_video_meme($user_id, $texts);
             case '10':
-                return $this->create_simple_video_meme($user_id, $texts  );
+                return $this->create_simple_video_meme($user_id, $texts);
             case '11':
-                return $this->create_simple_video_meme($user_id, $texts  );
+                return $this->create_simple_video_meme($user_id, $texts);
             case '12':
-                return $this->create_simple_video_meme($user_id, $texts  );
+                return $this->create_simple_video_meme($user_id, $texts);
             case '13':
                 return $this->create_simple_photo_meme($user_id, $texts, "memes/13-disaster-girl/disaster-girl.png");
             case '14':
@@ -37,24 +37,21 @@ class Memes {
             case '17':
                 return $this->create_exit12_meme($user_id, $texts);
             case '18':
-                return $this->create_simple_photo_meme($user_id, $texts  , "memes/18-facepalm/facepalm.png");
+                return $this->create_simple_photo_meme($user_id, $texts, "memes/18-facepalm/facepalm.png");
             case '19':
                 return $this->create_hide_the_pain_meme($user_id, $texts);
             case '20':
-                return $this->create_simple_photo_meme($user_id, $texts  , "memes/20-spiderman/spiderman.png");
+                return $this->create_simple_photo_meme($user_id, $texts, "memes/20-spiderman/spiderman.png");
             case '21':
-                return $this->create_simple_photo_meme($user_id, $texts  , "memes/21-think-bruh/think-bruh.png");
+                return $this->create_simple_photo_meme($user_id, $texts, "memes/21-think-bruh/think-bruh.png");
             case '22':
-                return $this->create_simple_video_meme($user_id, $texts  );
+                return $this->create_simple_video_meme($user_id, $texts);
             case '23':
-                return $this->create_simple_video_meme($user_id, $texts  );
+                return $this->create_simple_video_meme($user_id, $texts);
             case '24':
-                return $this->create_simple_video_meme($user_id, $texts  );
+                return $this->create_simple_video_meme($user_id, $texts);
             case '25':
-                return $this->create_simple_video_meme($user_id, $texts  );
-            default:
-                # code...
-                break;
+                return $this->create_simple_video_meme($user_id, $texts);
         }
     }
 
@@ -192,5 +189,9 @@ class Memes {
         {
             unlink($file);
         }
+    }
+
+    private function write_meme_captions($text, $user_id) {
+        
     }
 }
