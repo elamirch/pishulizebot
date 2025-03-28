@@ -5,7 +5,7 @@ switch ($checkpoint) {
         break;
     
     case 'text_1':
-        setCheckpoint('');
+        setCheckpoint(null);
         userUpdate('text_one', $text);
         $message = "Text was set, click on \"Create meme\" to create the meme";
 
@@ -40,7 +40,7 @@ switch ($checkpoint) {
         break;
     
     case 'text5tkt':
-        setCheckpoint('');
+        setCheckpoint(null);
         userUpdate('text_five', $text);
         $message =  "Fifth text was set, if you're finished with all the texts, ".
                     "click on the \"Create meme\" button";
@@ -62,7 +62,7 @@ switch ($checkpoint) {
         break;
 
     case 'text3dbf':
-        setCheckpoint('');
+        setCheckpoint(null);
         userUpdate('text_three', $text);
         $message =  "Third text was set, if you're finished with all the texts, ".
                     "click on the \"Create meme\" button";
@@ -77,7 +77,7 @@ switch ($checkpoint) {
         break;
     
     case 'text2dp':
-        setCheckpoint('');
+        setCheckpoint(null);
         userUpdate('text_two', $text);
         $message =  "Second text was set, if you're finished with all the texts, ".
                     "click on the \"Create meme\" button";
@@ -99,7 +99,7 @@ switch ($checkpoint) {
         break;
     
     case 'text3e12':
-        setCheckpoint('');
+        setCheckpoint(null);
         userUpdate('text_three', $text);
         $message =  "Third text was set, if you're finished with all the texts, ".
                     "click on the \"Create meme\" button";
@@ -114,7 +114,7 @@ switch ($checkpoint) {
         break;
     
     case 'text2hdp':
-        setCheckpoint('');
+        setCheckpoint(null);
         userUpdate('text_two', $text);
         $message =  "Second text was set, if you're finished with all the texts, ".
                     "click on the \"Create meme\" button";

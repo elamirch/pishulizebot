@@ -1,8 +1,8 @@
 <?php
 
-function setCheckpoint($text) {
+function setCheckpoint($checkpoint) {
     global $user, $user_id;
-    $user->update('telegram_user_id', $user_id, 'checkpoint', $text);
+    $user->update('telegram_user_id', $user_id, 'checkpoint', $checkpoint);
 }
 
 function logMessage($message) {
