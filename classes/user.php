@@ -23,7 +23,7 @@
 
         public function flush($user_id) {
             global $pdo;
-            $stmt = $pdo->prepare('UPDATE `users` SET `checkpoint` = "", `background` = NULL,' .
+            $stmt = $pdo->prepare('UPDATE `users` SET `checkpoint` = NULL, `background` = NULL,' .
             '`text_one` = NULL, `text_two` = NULL, `text_three` = NULL, `text_four` = NULL,' .
             '`text_five` = NULL WHERE `telegram_user_id` = :si;');
             $stmt->execute(array(':si' => $user_id));
