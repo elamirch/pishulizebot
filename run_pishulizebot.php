@@ -50,5 +50,5 @@ elseif(isset($update->message->video)) {
 
 //If the user sent a photo
 elseif(isset($update->message->photo)) {
-    require_once("handlers/photo.php");
+    require_once("handlers_pishu/photo.php");
 }
