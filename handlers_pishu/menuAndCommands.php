@@ -1,7 +1,6 @@
 <?php
 switch($update->message->text) {
-    case '/start':// on /start command
-        echo "\nStarted\n";
+    case '/start':
         $user->flush($user_id);
         $memes->empty_files_dir($user_id);
         var_dump($telegram->sendPhoto($user_id, "./samples/sm_pishulizebot/0-start-menu.jpg",

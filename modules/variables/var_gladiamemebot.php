@@ -4,13 +4,5 @@
     $MEME_CREATED_MESSAGE = "Your meme was successfuly created!\n\nEnjoy sharing it with your friends\n\nCreated By @Gladiamemebot";
     $MEME_MENU_MESSAGE = "Please fill all the fields below and then click on".
     " \"Create meme\" button:";
-
-    //Assign, or reassign common variables
-    function assign_common_variables() {
-        global $user;
-        global $user_id;
-        global $user_record;
-
-        //Retrieve user chat sessions
-        $user_record = $user->read("telegram_user_id", $user_id)[0];
-    }
+    $MEME_CREATION_FAILURE_ERROR = "Creating meme failed❗️\nPlease fill all the necessary".
+    "fields again and click on \"Create meme\" button";

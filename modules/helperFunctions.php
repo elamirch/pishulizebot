@@ -22,16 +22,13 @@ function dm($message) {
 }
 
 function validateOrDmError(array $inputs): bool {
-    global $user_record;
+    global $user_record, $MEME_CREATION_FAILURE_ERROR;
 
     logMessage("Validating Array: " . json_encode($inputs));
     foreach ($inputs as $input) {
         logMessage("Validating Input: " . $input);
         if(is_null($user_record[$input])) {
-            dm(
-                "Creating meme failed❗️\nPlease fill all the necessary".
-                "fields again and click on \"Create meme\" button"
-            );
+            dm($MEME_CREATION_FAILURE_ERROR);
             return false;
         }
     }
@@ -57,4 +54,23 @@ function sendPhotoMeme($fileToSend) {
 function createMeme($memeId, $texts) {
     global $memes, $user_id;
     return $memes->create($memeId, $texts, $user_id);
+}
+
+//this function breaks strings by the given chunk size so that the 
+//text written to the output video will stay within the video's resolution
+function break_string($string, $chunk_size) {
+    $lines = array();
+    $lines[0] = '';
+    $string = str_replace("'", '`', $string);
+    $words = mb_split(" ", $string);
+    $i = 0;
+    foreach($words as $key=>$word) {
+        if(mb_strlen($lines[$i]) + mb_strlen($word) < $chunk_size) {
+            $lines[$i] = $lines[$i] . $word . " ";
+        } else {
+            $i++;
+            $lines[$i] = $word . ' ';
+        }
+    }
+    return $lines;
 }
