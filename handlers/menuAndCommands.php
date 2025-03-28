@@ -4,8 +4,8 @@ switch($text) {
     case '/start':
         $user->flush($user_id);
         $memes->empty_files_dir($user_id);
-        var_dump($telegram->sendPhoto($user_id, "./samples/sm_gladiamemebot/0-start-menu.jpg",
-            "Select one of the above memes from the menu:", $meme_selector_markup_encoded));
+        $telegram->sendPhoto($user_id, "./samples/sm_gladiamemebot/0-start-menu.jpg",
+            "Select one of the above memes from the menu:", $meme_selector_markup_encoded);
         break;
     case '1- Talking Cats 😺😿':
         $user->flush($user_id);

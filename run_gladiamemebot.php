@@ -29,11 +29,12 @@ elseif(isset($update->message->text)) {
         $checkpoint = $user_record['checkpoint'] ?? false;
         $text = $update->message->text;
 
+
+        require_once("handlers/menuAndCommands.php");
+        
+        //Set meme texts based on checkpoints
         if($checkpoint) {
-            //Set meme texts based on checkpoints
             require_once("handlers/checkpoints.php");
-        } else {
-            require_once("handlers/menuAndCommands.php");
         }
 }
 
