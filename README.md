@@ -1,4 +1,4 @@
-**# Pishulizebot (Also Gladiamemebot)**
+# Pishulizebot (Also Gladiamemebot)
 
 ## Description
 These are two Telegram bots written in pure PHP that allow users to generate memes on the fly. Users can send background images/videos and captions to the bot, and it will return a meme with the given text overlaid. The bot supports 25 different memes.
