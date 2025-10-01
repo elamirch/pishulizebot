@@ -27,23 +27,23 @@ class Memes {
             case '12':
                 return $this->create_simple_video_meme($user_id, $texts);
             case '13':
-                return $this->create_simple_photo_meme($user_id, $texts, "memes/13-disaster-girl/disaster-girl.png");
+                return $this->create_simple_photo_meme($user_id, $texts, "memes/13-disaster-girl/disaster-girl.png", 36);
             case '14':
                 return $this->create_distracted_bf_meme($user_id, $texts);
             case '15':
-                return $this->create_simple_photo_meme($user_id, $texts, "memes/15-evil-kermit/evil-kermit.png");
+                return $this->create_simple_photo_meme($user_id, $texts, "memes/15-evil-kermit/evil-kermit.png", 48);
             case '16':
                 return $this->create_drakepost_meme($user_id, $texts);
             case '17':
                 return $this->create_exit12_meme($user_id, $texts);
             case '18':
-                return $this->create_simple_photo_meme($user_id, $texts, "memes/18-facepalm/facepalm.png");
+                return $this->create_simple_photo_meme($user_id, $texts, "memes/18-facepalm/facepalm.png", 40);
             case '19':
                 return $this->create_hide_the_pain_meme($user_id, $texts);
             case '20':
-                return $this->create_simple_photo_meme($user_id, $texts, "memes/20-spiderman/spiderman.png");
+                return $this->create_simple_photo_meme($user_id, $texts, "memes/20-spiderman/spiderman.png", 36);
             case '21':
-                return $this->create_simple_photo_meme($user_id, $texts, "memes/21-think-bruh/think-bruh.png");
+                return $this->create_simple_photo_meme($user_id, $texts, "memes/21-think-bruh/think-bruh.png", 36);
             case '22':
                 return $this->create_simple_video_meme($user_id, $texts);
             case '23':
@@ -117,13 +117,13 @@ class Memes {
         return "files/$user_id/$output_file.mp4";
     }
 
-    private function create_simple_photo_meme($user_id, $text, $meme_path) {
+    private function create_simple_photo_meme($user_id, $text, $meme_path, $font_size) {
 
         $text_refined = str_replace('0@0', "\n‫", str_replace(':', '\:', escapeshellcmd(implode('0@0', $text))));
         $output_file = uniqid("output");
         
         exec("ffmpeg -i $meme_path -vf \"drawtext=text='‫$text_refined':" .
-        "fontfile=Vazirmatn-Regular.ttf:fontsize=36:fontcolor=black:x=50:y=50:box=1:" .
+        "fontfile=Vazirmatn-Regular.ttf:fontsize=$font_size:fontcolor=black:x=50:y=50:box=1:" .
         "boxcolor=white@0.8:boxborderw=5 ,format=rgb24\" -frames:v 1 files/$user_id/$output_file.png", $op);
         return "files/$user_id/$output_file.png";
     }

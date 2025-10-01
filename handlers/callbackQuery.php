@@ -236,7 +236,7 @@ switch ($update->callback_query->data) {
         $inputs = ['text_one'];
 
         if (validateOrDmError($inputs)) {
-            $text = break_string($user_record['text_one'], 40);
+            $text = break_string($user_record['text_one'], 52);
             $output_file = createMeme('15', $text);
             sendPhotoMeme($output_file);
         }
