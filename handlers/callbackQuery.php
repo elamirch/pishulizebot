@@ -185,7 +185,7 @@ switch ($update->callback_query->data) {
             createInputVideo("memes/11-donkey-eating/11-donkey-eating.mov");
             
             $text = break_string($user_record['text_one'], 30);
-            $output_file = createMeme('1', $text);
+            $output_file = createMeme('11', $text);
             
             sendVideoMeme($output_file);
         }
@@ -211,7 +211,7 @@ switch ($update->callback_query->data) {
             $text = [
                 break_string($user_record['text_one'], 40)
             ];
-            $output_file = createMeme('15', $text);
+            $output_file = createMeme('13', $text);
             sendPhotoMeme($output_file);
         }
         
@@ -236,9 +236,7 @@ switch ($update->callback_query->data) {
         $inputs = ['text_one'];
 
         if (validateOrDmError($inputs)) {
-            $text = [
-                break_string($user_record['text_one'], 40)
-            ];
+            $text = break_string($user_record['text_one'], 40);
             $output_file = createMeme('15', $text);
             sendPhotoMeme($output_file);
         }
